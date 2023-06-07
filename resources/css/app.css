@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+
+    .btn-sec{
+        @apply  text-white font-normal border-2 border-white px-6 py-2 md:text-lg rounded-tl-xl rounded-br-xl hover:rounded-none uppercase;
+    }
+
+    .btn{
+        @apply bg-[#FFCF56] text-black font-medium border-2 border-[#FFCF56] px-10 py-2 md:text-lg rounded-tl-xl rounded-br-xl hover:rounded-none uppercase;
+    }
+
+    .form-select{
+        @apply w-full text-black border  rounded-full text-base outline-none py-2 px-3 leading-8;
+    }
+
+     .form-input{
+         @apply w-full text-black rounded-lg border-2  text-base outline-none py-1 px-3 leading-8;
+     }
+
+     .text-primary{
+         @apply text-center py-2 text-lg;
+     }
+
+     .heading-primary{
+         @apply text-3xl font-bold text-center py-4;
+     }
+
+     .form-lebel{
+       @apply pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200;
+     }
+     .order-input{
+        @apply w-full text-gray-700 rounded-xl rounded-bl-none border  border-black bg-white  focus:border-primary-two focus:ring-2 focus:ring-primary-two text-base outline-none px-3 leading-8 transition-colors duration-200 ease-in-out placeholder-gray-600
+     }
+
+}
