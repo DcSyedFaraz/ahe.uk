@@ -178,70 +178,70 @@ class FareSeeder extends Seeder
 
     //   Mphil And PHD
 
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>1,
-    //     'per_page_price'=>7
-    // ],
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>2,
-    //     'per_page_price'=>9
-    // ]
-    //  ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>3,
-    //     'per_page_price'=>11
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>4,
-    //     'per_page_price'=>13
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>5,
-    //     'per_page_price'=>15
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>6,
-    //     'per_page_price'=>17
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>7,
-    //     'per_page_price'=>19
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>8,
-    //     'per_page_price'=>21
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>9,
-    //     'per_page_price'=>23
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>10,
-    //     'per_page_price'=>25
-    // ]
-    // ,
-    // [
-    //     'academic_level_id'=>4,
-    //     'deadline_id'=>11,
-    //     'per_page_price'=>27
-    // ]
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>1,
+        'per_page_price'=>7
+    ],
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>2,
+        'per_page_price'=>9
+    ]
+     ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>3,
+        'per_page_price'=>11
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>4,
+        'per_page_price'=>13
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>5,
+        'per_page_price'=>15
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>6,
+        'per_page_price'=>17
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>7,
+        'per_page_price'=>19
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>8,
+        'per_page_price'=>21
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>9,
+        'per_page_price'=>23
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>10,
+        'per_page_price'=>25
+    ]
+    ,
+    [
+        'academic_level_id'=>4,
+        'deadline_id'=>11,
+        'per_page_price'=>27
+    ]
 
         ]);
     }

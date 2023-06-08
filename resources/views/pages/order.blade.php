@@ -45,10 +45,11 @@
 
                                     <div class="">
 
-                                        <input type="radio" id="ac_1" name="academic_level" value="College"
-                                            class="hidden peer ">
+                                        <input type="radio" onchange="syncRadio(this, 4)" id="ac_1"
+                                            name="academic_level" data-source="College" value="1"
+                                            class="get-fare hidden academic_level peer ">
                                         <label for="ac_1"
-                                            class=" border-gray-500  hover:bg-orange-500 hover:text-white peer-checked:text-white peer-checked:bg-orange-500 transition ease-in-out delay-150 rounded-3xl shadow-md rounded-bl-none px-8 py-2 my-3 border-2 font-light">
+                                            class=" border-gray-500  hover:bg-orange-500   hover:text-white peer-checked:text-white peer-checked:bg-orange-500 transition ease-in-out delay-150 rounded-3xl shadow-md rounded-bl-none px-8 py-2 my-3 border-2 font-light">
                                             College</label>
                                     </div>
                                     @error('phone')
@@ -57,16 +58,18 @@
                                     <div class="">
 
 
-                                        <input type="radio" id="ac_2" name="academic_level" value="UnderGraduate"
-                                            class="hidden peer ">
+                                        <input type="radio" data-source="UnderGraduate" onchange="syncRadio(this, 4)"
+                                            id="ac_2" name="academic_level" value="2"
+                                            class="get-fare hidden academic_level peer ">
                                         <label for="ac_2"
                                             class="border-gray-500  hover:bg-orange-500 hover:text-white peer-checked:text-white peer-checked:bg-orange-400 transition ease-in-out delay-150 rounded-3xl shadow-md rounded-bl-none px-8 py-2 my-3 border-2 font-light">
                                             UnderGraduate</label>
                                     </div>
                                     <div class="">
 
-                                        <input type="radio" id="ac_3" name="academic_level" value="Masters"
-                                            class="hidden peer ">
+                                        <input type="radio" data-source="Masters" onchange="syncRadio(this, 4)"
+                                            id="ac_3" name="academic_level" value="3"
+                                            class="get-fare academic_level hidden peer ">
                                         <label for="ac_3"
                                             class=" border-gray-500  hover:bg-orange-500 hover:text-white peer-checked:text-white peer-checked:bg-orange-400 transition ease-in-out delay-150 rounded-3xl shadow-md rounded-bl-none px-8 py-2 my-3 border-2 font-light">
                                             Masters</label>
@@ -74,8 +77,9 @@
                                     <div class="">
 
 
-                                        <input type="radio" id="ac_4" name="academic_level" value="Mphil/PhD"
-                                            class="hidden peer ">
+                                        <input type="radio" data-source="Mphil/PhD" id="ac_4"
+                                            onchange="syncRadio(this, 4)" name="academic_level" value="4"
+                                            class="get-fare academic_level hidden peer ">
                                         <label for="ac_4"
                                             class="border-gray-500 hover:bg-orange-500 hover:text-white peer-checked:text-white peer-checked:bg-orange-400 transition ease-in-out delay-150 rounded-3xl shadow-md rounded-bl-none px-8 py-2 my-3 border-2 font-light">
                                             Mphil/PhD</label>
@@ -97,7 +101,7 @@
                                 </div>
 
                                 <div class="w-auto grid lg:grid-cols-2 gap-4 my-1 mx-4">
-                                    <select name="paper_type" id="paper_type"
+                                    <select name="paper_type" id="paper_type " onchange="syncFormData(this, 0)"
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
                                         <option value="0" hidden disabled selected>Paper Type</option>
                                         @foreach ($paper_types as $paper_type)
@@ -106,7 +110,7 @@
                                                 {{ $paper_type->name }}
                                             </option>
                                         @endforeach
-                                    </select><select name="subject" id=""
+                                    </select><select name="subject" id="" onchange="syncFormData(this, 1)"
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
                                         <option value="0" disabled selected hidden>Subjects</option>
                                         @foreach ($subjects as $subject)
@@ -133,7 +137,7 @@
                                 </div>
 
                                 <div class="w-auto grid lg:grid-cols-2 gap-4 my-1 mx-4">
-                                    <select name="reference_style" id=""
+                                    <select name="reference_style" id="" onchange="syncFormData(this, 5)"
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
                                         <option value="0" hidden selected disabled>Reference Style</option>
                                         @foreach ($reference_styles as $reference_style)
@@ -198,8 +202,8 @@
                                 </div>
 
                                 <div class="w-auto grid lg:grid-cols-2 gap-4 my-1 mx-4">
-                                    <select name="number_of_pages" id="no_of_pages"
-                                        class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
+                                    <select name="number_of_pages" id="no_of_pages" onchange="syncFormData(this, 2)"
+                                        class="get-fare border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
                                         <option value="0">No. of Pages and Words Count</option>
                                         @for ($i = 1; $i < 200; $i++)
                                             <option {{ old('number_of_pages') == $i ? 'selected' : '' }}
@@ -210,8 +214,8 @@
                                     </select> @error('number_of_pages')
                                         <p class="text-red-600 text-sm">{{ $message }}</p>
                                     @enderror
-                                    <select name="deadline" id="deadline"
-                                        class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
+                                    <select name="deadline" id="deadline" onchange="syncFormData(this, 3)"
+                                        class="get-fare border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
                                         <option value="0" hidden selected disabled>Deadline</option>
                                         @foreach ($deadlines as $deadline)
                                             <option {{ old('$deadline') == $deadline->id ? 'selected' : '' }}
@@ -351,122 +355,101 @@
             <div class="grid lg:col-span-1 sm:col-span-1  mb-4">
                 <div class=" shadow-xl bg-gradient-to-tr from-white to-primary-one rounded-xl">
                     <form action="" id="ordersum" method="post">
-                    <div class="order text-center py-3 font-sans font-bold text-3xl">
-                        Order Summary
-                        <div class="w-[80%] mx-auto my-3">
-                            <hr>
+                        <div class="order text-center py-3 font-sans font-bold text-3xl">
+                            Order Summary
+                            <div class="w-[80%] mx-auto my-3">
+                                <hr>
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            Type of Paper:
-                        </span>
-                        <span class="text-end" id="paper_type_data">
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                Type of Paper:
+                            </span>
+                            <span class="text-end" id="paper_type_data">
+
+                                ---
+                            </span>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                Subject:
+                            </span>
+                            <span class="text-end" id="subject_data">
+
+                                ---
+                            </span>
+                        </div>
+
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                No of Pages:
+
+                            </span>
+                            <span class="text-end" id="no_of_data">
+
+                                ---
+                            </span>
+                        </div>
 
 
-                        </span>
-                    </div>
 
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            Subject:
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                Deadline:
 
-                        </span>
-                    </div>
+                            </span>
+                            <span class="text-end" id="deadline_data">
+                                ---
 
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            No of Pages:
+                            </span>
+                        </div>
 
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                Academic Level:
 
-                        </span>
-                    </div>
+                            </span>
+                            <span class="text-end" id="level_data">
+                                ---
+                            </span>
+                        </div>
 
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            PPT Slides:
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                Reference Style:
 
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
+                            </span>
 
-                        </span>
-                    </div>
+                            <span class="text-end" id="referece_data">
+                                ---
+                            </span>
+                        </div>
 
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            No of Poster:
+                        <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
+                            <span class="text-start">
+                                Total:
+                            </span>
+                            <span class="text-end" id="total-cost">
+                                0
 
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
+                            </span>
+                        </div>
+                        <div class="">
+                            <p>
+                                <small>
 
-                        </span>
-                    </div>
+                                </small>
+                            </p>
+                        </div>
 
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            Deadline:
-
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
-
-                        </span>
-                    </div>
-
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            Level:
-
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
-
-                        </span>
-                    </div>
-
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            Reference Style:
-
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
-
-                        </span>
-                    </div>
-
-                    <div class="grid lg:grid-cols-2 w-[95%] my-4 mx-auto">
-                        <span class="text-start">
-                            Total:
-                        </span>
-                        <span class="text-end">
-                            Admission Essays
-
-                        </span>
-                    </div>
-                    <div class="">
-                        <p>
-                            <small>
-
-                            </small>
-                        </p>
-                    </div>
-
-                    <div class="grid lg:col-span-1  w-[95%] my-4 mx-auto ">
-                        <button type="submit"
-                            class="bg-blue-500 text-white py-2 rounded-3xl border border-blue-800 rounded-bl-none font-bold
+                        <div class="grid lg:col-span-1  w-[95%] my-4 mx-auto ">
+                            <button type="submit"
+                                class="bg-blue-500 text-white py-2 rounded-3xl border border-blue-800 rounded-bl-none font-bold
                     ">Checkout
-                            Now</button>
-                    </div>
-                </form>
+                                Now</button>
+                        </div>
+                    </form>
                 </div>
 
 
@@ -552,20 +535,114 @@
             return true;
         });
         // return true;
+        function syncFormData(selectObject, dataSource) {
 
-        const form1 = document.querySelector('#order-form');
-  const form2 = document.querySelector('#ordersum');
 
-  // Add event listener to form1 on input change
-  form1.addEventListener('input', function() {
-    // Get form1 input values
-    const nameValue = form1.querySelector('#paper_type').value;
-    const emailValue = form1.querySelector('#email').value;
 
-    // Set form1 input values to form2
-    form2.querySelector('#paper_type_data').textContent = nameValue;
 
-    form2.querySelector('#email2').value = emailValue;
-  });
+            var text = selectObject.options[selectObject.selectedIndex].text;
+
+            switch (dataSource) {
+                case 0:
+
+                    var field = document.getElementById('paper_type_data');
+                    field.innerHTML = text;
+                    break;
+
+                case 1:
+                    var field = document.getElementById('subject_data');
+                    field.innerHTML = text;
+                    break;
+
+                case 2:
+
+                    var field = document.getElementById('no_of_data');
+                    field.innerHTML = text;
+                    break;
+
+                case 3:
+                    var field = document.getElementById('deadline_data');
+                    field.innerHTML = text;
+                    break;
+
+                case 4:
+
+                    var field = document.getElementById('level_data');
+                    console.log(field);
+                    field.innerHTML = "COLLEGE";
+                    break;
+
+
+                case 5:
+
+                    var field = document.getElementById('referece_data');
+                    field.innerHTML = text;
+                    break;
+
+
+
+                    //   const field = document.getElementById('paper_type_data');
+            }
+
+        }
+
+        function syncRadio(selectObject, dataSource) {
+            // var text2 = selectObject.value;
+            var text2 = selectObject.getAttribute('data-source');
+
+            var field = document.getElementById('level_data');
+            console.log(field);
+            field.innerHTML = text2;
+        }
+
+
+        const fares = @json($fares);
+        // console.log(fares);
+
+
+        $(".get-fare").change(function() {
+        // const academic_level = 1;
+        var academicLevels = document.getElementsByClassName('academic_level');
+        for (var i = 0; i < academicLevels.length; i++) {
+            academicLevels[i].addEventListener('change', function() {
+                if (this.checked) {
+                    // var value = this.value;
+                    // console.log(value);
+                    updateTotalCost();
+                }
+            });
+        }
+
+        $('#deadline, #no_of_pages').on('input', function() {
+            updateTotalCost();
+        });
+
+        function updateTotalCost() {
+            const academicLevel = $('.academic_level:checked').val();
+            const deadline = $('#deadline').val();
+            const no_of_pages = $('#no_of_pages').val() == null ? 1 : $('#no_of_pages').val();
+
+            fares.forEach(fare => {
+                if (deadline == fare.deadline_id && academicLevel == fare.academic_level_id) {
+                    $('#cost-per-page').html(fare.per_page_price);
+                    $('#total-cost').html(fare.per_page_price * no_of_pages);
+                }
+            });
+        }
+
+        }
+        );
+
+
+
+
+
+
+
+
+        //         $(document).ready(function() {
+        //   const academic_level = $('input[name="academic_level"]:checked').val();
+        //   console.log(academic_level);
+        // });
     </script>
 @endsection

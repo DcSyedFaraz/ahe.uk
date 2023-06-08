@@ -34,7 +34,8 @@ class OrderController extends Controller
         $subjects = Subject::orderBy('id', 'ASC')->get();
         $countries = Country::orderBy('id', 'ASC')->get();
         $web_setting = WebSetting::first();
-        return view('pages.order', compact('paper_types', 'academic_levels', 'deadlines', 'reference_styles', 'subjects', 'countries', 'web_setting'));
+        $fares= Fare::all();
+        return view('pages.order', compact('paper_types','fares', 'academic_levels', 'deadlines', 'reference_styles', 'subjects', 'countries', 'web_setting'));
     }
     public function store(Request $request)
     {
@@ -71,7 +72,8 @@ class OrderController extends Controller
                 // }
 
                 //Dynamic getting price from database according to deadline and Academic level
-                // $fare = Fare::where(['academic_level_id' => $request->academic_level, 'deadline_id' => $request->deadline])->firstOrFail();
+                $fare = Fare::where(['academic_level_id' => $request->academic_level, 'deadline_id' => $request->deadline])->firstOrFail();
+                // dd($fare);
                 // $request->merge([
                 //     'cost_per_page' => $fare->per_page_price,
                 //     "total_price" => ($fare->per_page_price * $request->number_of_pages),
