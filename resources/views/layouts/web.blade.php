@@ -132,7 +132,7 @@
 
 <body class="bg-slate-100">
 
-    {{-- @include('partials.frontend.navbar') --}}
+    @include('partials.frontend.navbar')
 
 
     @yield('content')
