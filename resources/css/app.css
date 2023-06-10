@@ -4,6 +4,15 @@
 
 
 @layer utilities {
+    .btn-group {
+        @apply focus:shadow-lg;
+    }
+    .btn-group-item {
+        @apply inline-block px-6 py-2 mx-1 bg-white text-primary-one font-medium text-sm leading-snug  border-2 border-primary-one rounded-full hover:bg-primary-one hover:text-white transition ease-in-out delay-150 peer-checked:bg-primary-one peer-checked:text-white;
+    }
+    .btn-active{
+        @apply text-white bg-primary-one transition duration-100 ease-in-out;
+    }
 
     .btn-sec{
         @apply  text-white font-normal border-2 border-white px-6 py-2 md:text-lg rounded-tl-xl rounded-br-xl hover:rounded-none uppercase;

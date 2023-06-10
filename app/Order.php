@@ -28,8 +28,8 @@ class Order extends Model
     ,'detail'
     // ,'spacing'
     // ,'is_complete'
-    // ,'cost_per_page'
-    // ,'total_price'
+    ,'cost_per_page'
+    ,'total_price'
     ];
 
     public function files()

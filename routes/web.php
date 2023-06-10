@@ -25,7 +25,11 @@ Route::group(['namespace'=> 'Web'], function(){
      //Order
      Route::get('/order' , 'OrderController@create')->name('order');
      Route::post('/order' , 'OrderController@store')->name('order.store');
-     
+
      Route::post('/', 'PagesController@queryStore')->name('form.submit');
+
+      // ContactController
+    Route::get('/contact',    "ContactController@create")->name('contact');
+    Route::post('/contact',   "ContactController@store")->name('contact.store');
 });
 

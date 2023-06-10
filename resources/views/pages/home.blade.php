@@ -35,6 +35,7 @@
 
 
 @section('content')
+@include('partials.frontend.hero')
     </div>
     </div>
 
@@ -541,7 +542,7 @@
         <!-- Girl Background -->
         <section class="py-7 bg-gradient-to-br from-[#FCA00F] to-orange-200  h-fit pb-5 overflow-hidden">
             <div class="container mx-auto">
-                <div class="p-8 grid grid-cols sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
+                <div class="p-8 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
                     <!-- Column 1 for mobile -->
                     <div class="lg:hidden rounded p-5 h-fit  bg-[#FDC875] mt-4">
                         <div class="flex">
@@ -607,7 +608,8 @@
                     </div>
 
                     <!-------------- Column 1 for large screens ----------->
-                    <div class="overflow-x-auto rounded-3xl w-[90%] col-span-2 bg-[#FDC875] border ml-9 border-[#f0a834]"
+
+                    <div class="hidden sm:hidden md:hidden lg:grid overflow-x-auto rounded-3xl w-[90%] col-span-2 bg-[#FDC875] border ml-9 border-[#f0a834]"
                         style=" ">
                         <div class="hidden sm:hidden md:hidden lg:grid rounded-3xl   m-20 " style="direction: ltr;">
                             <!-- 1st -->
@@ -719,7 +721,7 @@
                         </div>
                     </div>
                     <!-- column 2 for Large Screens-->
-                    <div class="hover:scale-105 hidden sm:hidden lg:block  col-span-1 ">
+                    <div class="hover:scale-105 hidden sm:hidden md:hidden lg:grid ">
                         <img src="images/student-education1.webp" class="h-[110%]" alt="">
                     </div>
 

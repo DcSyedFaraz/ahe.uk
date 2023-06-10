@@ -30,8 +30,8 @@ class CreateOrdersTable extends Migration
             $table->mediumText('detail')->nullable();
             // $table->boolean('is_complete')->default(false);
             // $table->boolean('spacing')->default(false);
-            // $table->integer('cost_per_page');
-            // $table->integer('total_price');
+            $table->integer('cost_per_page');
+            $table->integer('total_price');
 
             $table->timestamps();
         });

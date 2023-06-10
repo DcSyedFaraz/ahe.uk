@@ -41,7 +41,7 @@
                                     Academic Level:
                                 </div>
 
-                                <div class="w-auto my-4 grid lg:grid-cols-4 gap-4 mx-4">
+                                {{-- <div class="w-auto my-4 grid lg:grid-cols-4 gap-4 mx-4">
 
                                     <div class="">
 
@@ -87,7 +87,21 @@
 
 
 
+                                </div> --}}
+                                <div id="writer-level" class=" mt-2">
+                                    <div class="btn-group w-auto my-4 grid lg:grid-cols-4 gap-4 mx-4"
+                                        role="group">
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="College" class="get-fare btn-group-item " academic-level="1">College</button>
+
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="UnderGraduate" class="get-fare btn-group-item"
+                                            academic-level="2">Undergraduate</button>
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="Masters" class="get-fare btn-group-item"
+                                            academic-level="3">Master</button>
+                                            <button type="button" onclick="syncRadio(this, 4)" data-source="Mphil/Phd" class="get-fare btn-group-item" academic-level="4">Mphil/Phd</button>
+                                    </div>
+                                    <input type="hidden" name="academic_level" id="academic_level_id">
                                 </div>
+
 
                                 <div class="grid grid-cols-2 gap-4 mx-4 my-1">
 
@@ -204,7 +218,7 @@
                                 <div class="w-auto grid lg:grid-cols-2 gap-4 my-1 mx-4">
                                     <select name="number_of_pages" id="no_of_pages" onchange="syncFormData(this, 2)"
                                         class="get-fare border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
-                                        <option value="0">No. of Pages and Words Count</option>
+                                        {{-- <option value="0">No. of Pages and Words Count</option> --}}
                                         @for ($i = 1; $i < 200; $i++)
                                             <option {{ old('number_of_pages') == $i ? 'selected' : '' }}
                                                 value="{{ $i }}">
@@ -214,9 +228,11 @@
                                     </select> @error('number_of_pages')
                                         <p class="text-red-600 text-sm">{{ $message }}</p>
                                     @enderror
-                                    <select name="deadline" id="deadline" onchange="syncFormData(this, 3)"
+                                    {{-- @dd($deadlines) --}}
+                                    <select name="deadline" id="deadline_id" onchange="syncFormData(this, 3)"
                                         class="get-fare border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
-                                        <option value="0" hidden selected disabled>Deadline</option>
+                                        <option hidden="" selected disabled>Deadline</option>
+
                                         @foreach ($deadlines as $deadline)
                                             <option {{ old('$deadline') == $deadline->id ? 'selected' : '' }}
                                                 value="{{ $deadline->id }}">
@@ -565,12 +581,12 @@
                     field.innerHTML = text;
                     break;
 
-                case 4:
+                    case 4:
 
-                    var field = document.getElementById('level_data');
-                    console.log(field);
-                    field.innerHTML = "COLLEGE";
-                    break;
+                        var field = document.getElementById('level_data');
+                        console.log(field);
+                        field.innerHTML = "COLLEGE";
+                        break;
 
 
                 case 5:
@@ -596,42 +612,65 @@
         }
 
 
+
+        $("#writer-level .btn-group[role='group'] button").on('click', function() {
+            $(this).siblings().removeClass('btn-active')
+            $(this).addClass('btn-active');
+            console.log($('#academic_level_id').val($(this).attr('academic-level')));
+        })
+
+
+
+
+
         const fares = @json($fares);
         // console.log(fares);
 
 
-        $(".get-fare").change(function() {
-        // const academic_level = 1;
-        var academicLevels = document.getElementsByClassName('academic_level');
-        for (var i = 0; i < academicLevels.length; i++) {
-            academicLevels[i].addEventListener('change', function() {
-                if (this.checked) {
-                    // var value = this.value;
-                    // console.log(value);
-                    updateTotalCost();
-                }
-            });
-        }
 
-        $('#deadline, #no_of_pages').on('input', function() {
-            updateTotalCost();
-        });
+        $(".get-fare").on('click', function() {
+            // e.preventDefault();
+            // const academic_level = 1;
+            // var academicLevels = document.getElementsByClassName('academic_level');
+            // for (var i = 0; i < academicLevels.length; i++) {
+            //     academicLevels[i].addEventListener('change', function() {
+            //         if (this.checked) {
+            //             var value = this.value;
+            //             console.log(value);
+            //             updateTotalCost();
+            //         }
+            //     });
+            // }
 
-        function updateTotalCost() {
-            const academicLevel = $('.academic_level:checked').val();
-            const deadline = $('#deadline').val();
+            // $('#deadline, #no_of_pages').on('input', function() {
+            //     updateTotalCost();
+            // });
+
+            const academicLevel = $('#academic_level_id').val();
+
+            console.log(academicLevel);
+
+            const deadline = $('#deadline_id').val();
+
+            console.log(deadline);
+
             const no_of_pages = $('#no_of_pages').val() == null ? 1 : $('#no_of_pages').val();
 
             fares.forEach(fare => {
                 if (deadline == fare.deadline_id && academicLevel == fare.academic_level_id) {
+                    console.log(fare.per_page_price);
                     $('#cost-per-page').html(fare.per_page_price);
                     $('#total-cost').html(fare.per_page_price * no_of_pages);
                 }
             });
-        }
 
-        }
-        );
+
+
+            // function updateTotalCost() {
+
+            // }
+
+        });
 
 
 

@@ -73,13 +73,14 @@ class OrderController extends Controller
 
                 //Dynamic getting price from database according to deadline and Academic level
                 $fare = Fare::where(['academic_level_id' => $request->academic_level, 'deadline_id' => $request->deadline])->firstOrFail();
-                // dd($fare);
-                // $request->merge([
-                //     'cost_per_page' => $fare->per_page_price,
-                //     "total_price" => ($fare->per_page_price * $request->number_of_pages),
-                //     'academic_level' => $fare->academic_level->name,
-                //     'deadline' => $fare->deadline->name,
-                // ]);
+                // dd($request);
+                $request->merge([
+                    'cost_per_page' => $fare->per_page_price,
+                    "total_price" => ($fare->per_page_price * $request->number_of_pages),
+                    'academic_level' => $fare->academic_level->name,
+                    'deadline' => $fare->deadline->name,
+                ]);
+                // dd($request);
                 DB::beginTransaction();
 
                 $order = Order::create($request->all());

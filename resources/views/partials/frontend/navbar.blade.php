@@ -14,7 +14,7 @@
         height: 4px;
         cursor: pointer;
         animate: 0.2s;
-        background: #03a9f4;
+        background: #F68800;
         border-radius: 25px;
     }
 
@@ -30,7 +30,7 @@
     }
 
     input[type=range]:focus::-webkit-slider-runnable-track {
-        background: #03a9f4;
+        background: #f4c803;
     }
 
     .range-wrap {
@@ -64,7 +64,7 @@
 
 
 
-<section class="bg-cover bg-no-repeat bg-orange overflow-hidden p-10">
+<section class="bg-primary-one overflow-hidden p-10">
 
     <nav class="border-gray-200 px-2 mb-10">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -162,138 +162,6 @@
         </div>
     </nav>
 
-    <!------------------------- Hero Section Start ----------------------->
-    <div
-        class="container mx-auto main p-4 md:p-10 pt-16 justify-items-center  grid grid-cols-1 gap-x-4 lg:grid-cols-2 ">
-
-        <div class="pb-3 flex space-x-4 ">
-            <div class=" mt-4">
-                <img class="animate-pulse" src="images/dotted squaredotted.png" alt="">
-            </div>
-
-            <div class="  ">
-                <h1 class="text-3xl font-medium font-inter">Online Assignment Help UK</h1>
-                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quos magni dignissimos
-                    autem magnam nesciunt? Inventore incidunt nobis dolor nam.</p>
-                <p class="font-bold">Price Starts $10 per page</p>
-                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, rerum incidunt? Enim,
-                    doloremque. Quis, doloremque.</p>
-            </div>
-        </div>
-
-        <div class="w-full  md:max-w-max sm:mx-auto  rounded-lg bg-white p-6 shadow-lg">
-
-            <form method="POST" action="{{ route('form.submit') }}">
-
-                @if (session('success'))
-                    <div class="my-4 mx-auto bg-primari-one-lite border-t-4 border-primary-one rounded-b text-sm text-teal-900 px-4 py-3 shadow-md"
-                        role="alert">
-
-                        <p class="text-center font-bold">{{ session('success') }}</p>
-
-                    </div>
-                @endif
-                @csrf
-                <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
-                    <div class="col-span-2">
-                        <h2 class="text-lg font-bold font-inter">ORDER NOW</h2>
-                    </div>
-                    <div class="col-span-4 bg-[#276967] rounded-lg p-2 mb-4">
-                        <p class="text-sm text-white">Upto $50 off on all assignments</p>
-                    </div>
-                </div>
-
-                <!-- First Name and Last Name -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="text" class="form-input" id="exampleInput123" name="fname"
-                            aria-describedby="emailHelp123" required maxlength="255" placeholder="First name">
-                        <label for="emailHelp123" class="form-lebel"></label>
-                    </div>
-                    <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="text" class="form-input" id="exampleInput124" name="lname"
-                            aria-describedby="emailHelp124" required maxlength="255" placeholder="Last name">
-                        <label for="exampleInput124" class="form-lebel"></label>
-                    </div>
-                </div>
-
-                <!-- Subject and Deadline -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="text" class="form-input" id="exampleInput123" name="subject"
-                            aria-describedby="emailHelp123" placeholder="Subject">
-                        <label for="emailHelp123" class="form-lebel"></label>
-                    </div>
-                    <div class="relative mb-6" data-te-input-wrapper-init>
-                        <div class="w-full">
-                            <select id="deadline" name="deadline" type="text" class="form-select">
-                                <option hidden="" value="0" disabled="" selected="">Deadline
-                                </option>
-                                @foreach ($deadlines as $deadline)
-                                    <option {{ old('$deadline') == $deadline->id ? 'selected' : '' }}
-                                        value="{{ $deadline->id }}">{{ $deadline->name }}</option>
-                                @endforeach
-                                {{-- <option value="1">15 Days</option>
-                                                                <option value="2">10 Days</option>
-                                                                <option value="3">7 Days</option>                                       --}}
-                            </select>
-                            @error('deadline')
-                                <p class="text-red-600 text-sm">{{ $message }}</p>
-                            @enderror
-                        </div>
-
-                        <label for="exampleInput124" class="form-lebel"></label>
-                    </div>
-                </div>
-
-                <!-- Wordcount Slider -->
-                <div class="range bg-[#F5F5F5] mb-4">
-                    <label for="steps-range" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Word
-                        Count</label>
-
-                    <div class="range-wrap">
-                        <div class="range-value" id="rangeV"></div>
-                        <input id="range" name="wcount" type="range" min="250" max="5000"
-                            value="2000">
-                    </div>
-                </div>
-
-                <!-- Country Code Number University -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div>
-                        <select id="small" name="country" class="form-select">
-                            <option selected>Choose a country</option>
-                            <option value="US">United States</option>
-                            <option value="CA">Canada</option>
-                            <option value="FR">France</option>
-                            <option value="DE">Germany</option>
-                        </select>
-                    </div>
-
-                    <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="number" class="form-input" id="exampleInput124" name="phone"
-                            aria-describedby="emailHelp124" placeholder="Phone Number">
-                        <label for="exampleInput124" class="form-lebel"></label>
-                    </div>
-
-                    <div>
-                        <div class="relative mb-6" data-te-input-wrapper-init>
-                            <input type="text" class="form-input" id="exampleInput124" name="university"
-                                aria-describedby="emailHelp124" placeholder="University">
-                            <label for="exampleInput124" class="form-lebel"></label>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit"
-                    class="transition ease-in-out delay-150 w-full rounded-bl-lg rounded-tr-lg bg-[#276967] px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none hover:-translate-y-1 hover:scale-110 active:bg-primary-800 active:shadow-lg"
-                    data-te-ripple-init data-te-ripple-color="light">
-                    Sign up
-                </button>
-            </form>
-        </div>
-
-    </div>
 
 
     <!-- This Script is used for mobile responsive navbar -->

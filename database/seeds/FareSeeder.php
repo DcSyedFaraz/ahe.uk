@@ -13,7 +13,7 @@ class FareSeeder extends Seeder
     public function run()
     {
         Fare::insert([
-            //undergraduate
+            //College
             ['academic_level_id'=>1,
              'deadline_id'=>1,
              'per_page_price'=>40
@@ -63,7 +63,7 @@ class FareSeeder extends Seeder
          'per_page_price'=>175
         ],
 
-        //Master
+        //UnderGraduate
 
         ['academic_level_id'=>2,
         'deadline_id'=>1,
@@ -114,25 +114,25 @@ class FareSeeder extends Seeder
     'per_page_price'=>185
    ],
 
-    // PHD
+    // Master's
     [
         'academic_level_id'  => 3, // master
-        'deadline_id'        => 1, // 15 or more days
+        'deadline_id'        => 1, // 20 days
         'per_page_price'     => 60
      ],
      [
          'academic_level_id'  => 3, // master
-         'deadline_id'        => 2, // 10 days
+         'deadline_id'        => 2, // 15 days
          'per_page_price'     => 65
       ],
       [
          'academic_level_id'  => 3, // master
-         'deadline_id'        => 3, // 7 days
+         'deadline_id'        => 3, // 10 days
          'per_page_price'     => 75
       ],
       [
          'academic_level_id'  => 3, // master
-         'deadline_id'        => 4, // 6 days
+         'deadline_id'        => 4, // 7 days
          'per_page_price'     => 80
       ],
       [
