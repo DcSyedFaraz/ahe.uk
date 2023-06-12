@@ -14,26 +14,26 @@
     <meta name="csrf-token" content="xFfFMm0UfLUjLAT6s3EW3gIZplo9RTcKeiBHRHCz">
 
     {{-- Chrome Address Bar Color --}}
-    <meta name="theme-color" content="#fff"/>
+    <meta name="theme-color" content="#fff" />
 
     <title>@yield('title', env('APP_NAME'))</title>
-    <meta name="description" content="@yield('description')"/>
+    <meta name="description" content="@yield('description')" />
 
     {{-- Facebook share --}}
     <meta property="og:url" content="@yield('canonical')" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@yield('title', env('APP_NAME'))" />
     <meta property="og:description" content="@yield('description')" />
-    <meta property="og:image" content="{{asset('imgs/logo.png')}}"/>
+    <meta property="og:image" content="{{ asset('imgs/logo.png') }}" />
 
     {{-- Twitter share --}}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="@yield('title', '')"/>
-    <meta name="twitter:description" content="@yield('description',)"/>
-    <meta name="twitter:image" content="{{asset('imgs/logo.png')}}"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="@yield('title', '')" />
+    <meta name="twitter:description" content="@yield('description')" />
+    <meta name="twitter:image" content="{{ asset('imgs/logo.png') }}" />
 
     {{-- Canonical --}}
-    <link rel="canonical" href="@yield('canonical', '')"/>
+    <link rel="canonical" href="@yield('canonical', '')" />
     {{-- CUSTOM CSS --}}
     <link rel="stylesheet" href="{{ asset('css/frontend-customcss.css') }}">
     {{-- Favicon --}}
@@ -49,7 +49,12 @@
 
     {{-- intl Tel Input CSS --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
-    <style> .iti { width: 100%; margin-top: 6px;  } </style>
+    <style>
+        .iti {
+            width: 100%;
+            margin-top: 6px;
+        }
+    </style>
 
     {{-- FontAwsome 6 --}}
     <script src="https://kit.fontawesome.com/2c6b599d00.js" crossorigin="anonymous"></script>
@@ -125,7 +130,6 @@
             height: auto;
             overflow: hidden;
         }
-
     </style>
 
 </head>
@@ -143,7 +147,7 @@
     @include('partials.frontend.footer')
 
     {{-- Tawto --}}
-     {{-- {{ TawkTo::widgetCode('https://embed.tawk.to/5ea44eec69e9320caac73ec7/default') }} --}}
+    {{-- {{ TawkTo::widgetCode('https://embed.tawk.to/5ea44eec69e9320caac73ec7/default') }} --}}
 
     {{-- scripts --}}
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -162,21 +166,7 @@
     {{-- <script src="jquery.countup.js"></script> --}}
 
     @yield('scripts')
-    <script>
-      const
-  range = document.getElementById('range'),
-  rangeV = document.getElementById('rangeV'),
-  setValue = ()=>{
-    const
-      newValue = Number( (range.value - range.min) * 100 / (range.max - range.min) ),
-      newPosition = 10 - (newValue * 0.2);
-    rangeV.innerHTML = `<span>${range.value}</span>`;
-    rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
-  };
-document.addEventListener("DOMContentLoaded", setValue);
-range.addEventListener('input', setValue);
-
-    </script>
+    
 </body>
 
 </html>

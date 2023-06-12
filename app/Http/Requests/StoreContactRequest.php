@@ -11,10 +11,10 @@ class StoreContactRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return false;
-    }
+    // public function authorize()
+    // {
+    //     return false;
+    // }
 
     /**
      * Get the validation rules that apply to the request.
@@ -25,12 +25,12 @@ class StoreContactRequest extends FormRequest
     {
         return [
             'name'      => 'required|regex:/^[A-Za-z -]+$/|max:255',
-              'email'     => 'required|email|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
-              'phone'     => 'required|regex:/^[+][0-9]/|min:12',
+            'email'     => 'required|email|regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+            'phone'     => 'required|regex:/^[+][0-9]/|min:12',
             //   'country'   => 'nullable',
-              'subject'   => 'required|string',
-              'detail'    => 'required|nullable'
-       
+            'subject'   => 'required|string',
+            'detail'    => 'required|nullable'
+
         ];
     }
 }

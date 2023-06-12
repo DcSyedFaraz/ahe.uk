@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use App\Contact;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
 use Illuminate\Http\Request;
 
@@ -13,6 +14,10 @@ class ContactController extends Controller
     }
 
     public function store(StoreContactRequest $request){
+
+        // dd($request);
+
+
         $contact= Contact::create($request->all());
 
          // Send mail to user

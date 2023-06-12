@@ -22,7 +22,7 @@
 
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
-            background: #b30000;
+            background: #F68800;
         }
 
         .overflow-x-auto {

@@ -44,5 +44,8 @@
      .order-input{
         @apply w-full text-gray-700 rounded-xl rounded-bl-none border  border-black bg-white  focus:border-primary-two focus:ring-2 focus:ring-primary-two text-base outline-none px-3 leading-8 transition-colors duration-200 ease-in-out placeholder-gray-600
      }
+     .contact-input{
+        @apply border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 py-2 px-2 w-full border-[1px];
+     }
 
 }

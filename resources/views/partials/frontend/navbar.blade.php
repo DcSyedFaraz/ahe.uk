@@ -141,11 +141,10 @@
                             <img class="hidden lg:flex animate-bounce" src="images/Group 44track.png" alt="">
                         </div>
 
-                        <a href="#"
+                        <a href="{{ route('contact')}}"
                             class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
                             aria-current="page">
-                            Track
-                            Assignment</a>
+                            Contact Us</a>
                     </li>
                     <li class="lg:flex">
                         <div>
