@@ -6,8 +6,9 @@ use App\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreContactRequest;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller as RoutingController;
 
-class ContactController extends Controller
+class ContactController extends RoutingController
 {
     public function create(){
         return view('pages.contact');
