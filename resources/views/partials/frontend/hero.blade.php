@@ -28,7 +28,8 @@
 
         <div class="w-full  md:max-w-max sm:mx-auto  rounded-lg bg-white p-6 shadow-lg">
 
-            <form method="POST" action="{{ route('form.submit') }}">
+            <form method="POST" id="contact-form" action="{{ route('form.submit') }}">
+                @csrf
 
                 @if (session('success'))
                     <div class="my-4 mx-auto bg-primari-one-lite border-t-4 border-primary-one rounded-b text-sm text-teal-900 px-4 py-3 shadow-md"
@@ -38,7 +39,6 @@
 
                     </div>
                 @endif
-                @csrf
                 <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
                     <div class="col-span-2">
                         <h2 class="text-lg font-bold font-inter">ORDER NOW</h2>
@@ -56,8 +56,8 @@
                         <label for="emailHelp123" class="form-lebel"></label>
                     </div>
                     <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="text" class="form-input" id="exampleInput124" name="lname"
-                            aria-describedby="emailHelp124" required maxlength="255" placeholder="Last name">
+                        <input type="email" class="form-input" id="exampleInput124" name="email"
+                            aria-describedby="emailHelp124" required maxlength="255" placeholder="Email">
                         <label for="exampleInput124" class="form-lebel"></label>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                     </div>
 
                     <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="number" class="form-input" id="exampleInput124" name="phone"
+                        <input type="tel" class="form-input" id="exampleInput124" name="phone"
                             aria-describedby="emailHelp124" placeholder="Phone Number">
                         <label for="exampleInput124" class="form-lebel"></label>
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
 
-                <button type="submit"
+                <button type="submit"  id="btn-submit"
                     class="transition ease-in-out delay-150 w-full rounded-bl-lg rounded-tr-lg bg-[#276967] px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none hover:-translate-y-1 hover:scale-110 active:bg-primary-800 active:shadow-lg"
                     data-te-ripple-init data-te-ripple-color="light">
                     Let's Start
@@ -158,76 +158,80 @@
         document.addEventListener("DOMContentLoaded", setValue);
         range.addEventListener('input', setValue);
 //ajax for form...
-    $(document).ready(function() {
-        const phoneInputField = document.querySelector("#phone");
-        const phoneInput = window.intlTelInput(phoneInputField, {
-            preferredCountries: ["ae"],
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-        });
-        $('#contact-form').on('submit', function(e) {
-            e.preventDefault();
+$(document).ready(function() {
 
-            const phoneNumber = phoneInput.getNumber();
-            $('#phone2').val(phoneNumber);
-            $.ajax({
-                url: "{{ route('contact.store') }}",
-                type: "POST",
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: $('#contact-form').serialize(),
-                beforeSend: function() {
-                    $(".contact-form-error").empty();
-                    $('#contact-form').find(':submit').attr("disabled", true);
-                    $('#btn-submit').html("Submiting...");
-                },
-                complete: function() {
-                    $('#contact-form').find(':submit').attr("disabled", false);
-                    $('#btn-submit').html("Submit");
-                },
-                success: function(res) {
 
-                    // console.log(res)
 
-                    $('#msg-bag').empty();
 
-                    let msg =
-                        '<div class="bg-green-100 border w-[80%] text-center left-[10%] border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">';
-                    msg += '<strong class="font-bold">Success!</strong>';
-                    msg += '<span class="block sm:inline">' + res.success + '</span>';
-                    msg += '</div>';
 
-                    $('#msg-bag').append(msg);
+            $('#contact-form').on('submit', function(e) {
+                e.preventDefault();
 
-                    $(':input', 'form')
-                        .not(':button, :submit, :reset, :hidden')
-                        .val('')
-                        .prop('checked', false)
-                        .prop('selected', false);
-                },
-                error: function(err) {
-                    if (err.status == 422) {
+                const phoneNumber = phoneInput.getNumber();
+                var number =  $('#phone').val(phoneNumber);
+
+                // console.log(number);
+
+
+                $.ajax({
+                    url: "{{ route('form.submit') }}",
+                    type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: $('#contact-form').serialize(),
+                    beforeSend: function() {
+                        $(".contact-form-error").empty();
+                        $('#contact-form').find(':submit').attr("disabled", true);
+                        $('#btn-submit').html("Submiting...");
+                    },
+                    complete: function() {
+                        $('#contact-form').find(':submit').attr("disabled", false);
+                        $('#btn-submit').html("Submit");
+                    },
+                    success: function(res) {
+
+                        // console.log(res)
 
                         $('#msg-bag').empty();
 
                         let msg =
-                            '  <div class="mx-auto md:mx-0 md:left-[35%] bg-red-100 border w-[80%]  md:w-[30%] border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 text-center" role="alert">';
-                        msg += '    <strong class="font-bold ">Error!</strong>';
-                        msg += '    <span class="  ">Invalid Data</span>';
-                        msg += ' </div>';
+                            '<div class="bg-green-100 border w-[80%] text-center left-[10%] border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">';
+                        msg += '<strong class="font-bold">Success!</strong>';
+                        msg += '<span class="block sm:inline">' + res.success + '</span>';
+                        msg += '</div>';
 
                         $('#msg-bag').append(msg);
 
-                        $.each(err.responseJSON.errors, function(i, error) {
-                            var el = $('#contact-form').find('[name="' + i + '"]');
-                            el.after($('<span class="contact-form-error text-red-700">' +
-                                error[0] + '</span>'));
-                        });
+                        $(':input', 'form')
+                            .not(':button, :submit, :reset, :hidden')
+                            .val('')
+                            .prop('checked', false)
+                            .prop('selected', false);
+                    },
+                    error: function(err) {
+                        if (err.status == 422) {
 
-                        $('.contact-form-error').delay(2000).fadeOut();
-                    }
-                },
+                            $('#msg-bag').empty();
+
+                            let msg =
+                                '  <div class="mx-auto md:mx-0 md:left-[35%] bg-red-100 border w-[80%]  md:w-[30%] border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 text-center" role="alert">';
+                            msg += '    <strong class="font-bold ">Error!</strong>';
+                            msg += '    <span class="  ">Invalid Data</span>';
+                            msg += ' </div>';
+
+                            $('#msg-bag').append(msg);
+
+                            $.each(err.responseJSON.errors, function(i, error) {
+                                var el = $('#contact-form').find('[name="' + i + '"]');
+                                el.after($('<span class="contact-form-error text-red-700">' +
+                                    error[0] + '</span>'));
+                            });
+
+                            $('.contact-form-error').delay(2000).fadeOut();
+                        }
+                    },
+                });
             });
         });
-    });
 </script>

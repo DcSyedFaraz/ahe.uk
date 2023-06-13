@@ -13,7 +13,7 @@
 
     <section class="container mx-auto w-[80%]">
         <div class="grid grid-col-3 sm:grid-cols-3 my-4 gap-x-4 gap-y-4  ">
-            <div class="col-span-2 ">
+            <div class="lg:col-span-2 md:col-span-3 sm:col-span-3 ">
                 <div class="lg:grid-cols-3 rounded-xl shadow-xl">
 
                     <?php if(session('success')): ?>
@@ -42,19 +42,31 @@
 
                                 
                                 <div id="writer-level" class=" mt-2">
-                                    <div class="btn-group w-auto my-4 grid lg:grid-cols-4 gap-4 mx-4"
-                                        role="group">
-                                        <button type="button" onclick="syncRadio(this, 4)" data-source="College" class="get-fare btn-group-item " academic-level="1">College</button>
+                                    <div class="btn-group w-auto my-4 grid lg:grid-cols-4 gap-4 mx-4" role="group">
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="College"
+                                            class="get-fare btn-group-item " academic-level="1">College</button>
 
-                                        <button type="button" onclick="syncRadio(this, 4)" data-source="UnderGraduate" class="get-fare btn-group-item"
-                                            academic-level="2">Undergraduate</button>
-                                        <button type="button" onclick="syncRadio(this, 4)" data-source="Masters" class="get-fare btn-group-item"
-                                            academic-level="3">Master</button>
-                                            <button type="button" onclick="syncRadio(this, 4)" data-source="Mphil/Phd" class="get-fare btn-group-item" academic-level="4">Mphil/Phd</button>
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="UnderGraduate"
+                                            class="get-fare btn-group-item" academic-level="2">Undergraduate</button>
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="Masters"
+                                            class="get-fare btn-group-item" academic-level="3">Master</button>
+                                        <button type="button" onclick="syncRadio(this, 4)" data-source="Mphil/Phd"
+                                            class="get-fare btn-group-item" academic-level="4">Mphil/Phd</button>
                                     </div>
                                     <input type="hidden" name="academic_level" id="academic_level_id">
                                 </div>
-
+                                <div class="mx-4 my-1">
+                                    <?php $__errorArgs = ['academic_level'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                                </div>
 
                                 <div class="grid grid-cols-2 gap-4 mx-4 my-1">
 
@@ -120,16 +132,7 @@
                                             </option>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </select>
-                                    <?php $__errorArgs = ['reference_style'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+
                                     <select name="style" id=""
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
                                         <option value="0" selected hidden disabled>References</option>
@@ -142,16 +145,35 @@ unset($__errorArgs, $__bag); ?>
                                             </option>
                                         <?php endfor; ?>
                                     </select>
-                                    <?php $__errorArgs = ['style'];
+
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+
+                                    <span>
+                                        <?php $__errorArgs = ['reference_style'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+
+                                    </span><span>
+                                        <?php $__errorArgs = ['style'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
+                                    </span>
                                 </div>
                                 <div class="grid grid-cols-1 gap-4 mx-4 my-1">
 
@@ -242,18 +264,32 @@ unset($__errorArgs, $__bag); ?>
 
 
                                     </select>
-                                    <?php $__errorArgs = ['deadline'];
+
+
+
+
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+
+                                    <span>
+
+
+                                    </span><span>
+                                        <?php $__errorArgs = ['deadline'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                </div>
 
+
+
+                                    </span>
+                                </div>
 
                                 <div class="grid grid-cols-1 gap-4 mx-4 my-1">
 
@@ -312,29 +348,39 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="w-auto grid lg:grid-cols-2 gap-4 my-1 mx-4">
                                     <input type="text" placeholder="First Name" name="name"
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
-                                    <?php $__errorArgs = ['name'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+
                                     <input type="text" placeholder="Email" name="email"
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 border-2 font-light">
-                                    <?php $__errorArgs = ['email'];
+
+
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+
+                                    <span>
+                                        <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 
+                                    </span><span>
+                                        <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
+                                    </span>
                                 </div>
                                 <div class="grid grid-cols-2 gap-4 mx-4 my-1">
 
@@ -360,16 +406,7 @@ unset($__errorArgs, $__bag); ?>
                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                         
                                     </select>
-                                    <?php $__errorArgs = ['country'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+
 
                                     <input id="phone" name="Phone" type="tel" name="phone"
                                         class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 py-2 w-full border-2 font-light "
@@ -377,16 +414,35 @@ unset($__errorArgs, $__bag); ?>
                                         oninput="this.value=this.value.replace(/[^0-9\+]/g,'');" autocomplete="off"
                                         data-intl-tel-input-id="0">
                                     <input id="phone2" name="phone" type="hidden">
-                                    <?php $__errorArgs = ['phone'];
+
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+
+                                    <span>
+                                        <?php $__errorArgs = ['country'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                        <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
-                                    <?php unset($message);
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+
+                                    </span><span>
+                                        <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                            <p class="text-red-600 text-sm"><?php echo e($message); ?></p>
+                                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
+                                    </span>
                                 </div>
                                 <div class="flex  justify-center">
                                     <button type="submit" id="btn-submit" class="rounded-t-xl btn ">Submit</button>
@@ -402,8 +458,8 @@ unset($__errorArgs, $__bag); ?>
             </div>
 
 
-            <div class="grid lg:col-span-1 sm:col-span-1  mb-4">
-                <div class=" shadow-xl bg-gradient-to-tr from-white to-primary-one rounded-xl">
+            <div class="grid lg:col-span-1 sm:col-span-3  mb-4">
+                <div class=" shadow-xl bg-gradient-to-tr from-white to-primary-one rounded-xl ">
                     <form action="" id="ordersum" method="post">
                         <div class="order text-center py-3 font-sans font-bold text-3xl">
                             Order Summary
@@ -493,7 +549,7 @@ unset($__errorArgs, $__bag); ?>
                             </p>
                         </div>
 
-                        <div class="grid lg:col-span-1  w-[95%] my-4 mx-auto ">
+                        <div class="grid lg:col-span-1 mt-[27%] w-[95%] my-4 mx-auto ">
                             <button type="submit"
                                 class="bg-blue-500 text-white py-2 rounded-3xl border border-blue-800 rounded-bl-none font-bold
                     ">Checkout
@@ -505,7 +561,7 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-                <div class=" col-start-2 col-span-2 xl:col-span-1 flex flex-col space-y-8 my-4">
+                <div class="  space-y-8 my-4">
                     <div class="panel">
 
                         <div
@@ -615,12 +671,12 @@ unset($__errorArgs, $__bag); ?>
                     field.innerHTML = text;
                     break;
 
-                    case 4:
+                case 4:
 
-                        var field = document.getElementById('level_data');
-                        console.log(field);
-                        field.innerHTML = "COLLEGE";
-                        break;
+                    var field = document.getElementById('level_data');
+                    console.log(field);
+                    field.innerHTML = "COLLEGE";
+                    break;
 
 
                 case 5:

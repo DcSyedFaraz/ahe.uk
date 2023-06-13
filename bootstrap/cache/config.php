@@ -1,10 +1,11 @@
 <?php return array (
   'app' => 
   array (
-    'name' => 'Laravel',
+    'name' => 'Assignment_help_expert',
     'env' => 'local',
     'debug' => true,
     'url' => 'http://localhost',
+    'app_name' => 'Assignment Help Expert',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
@@ -215,7 +216,7 @@
         'endpoint' => NULL,
       ),
     ),
-    'prefix' => 'laravel_cache',
+    'prefix' => 'assignment_help_expert_cache',
   ),
   'cors' => 
   array (
@@ -311,7 +312,7 @@
       'options' => 
       array (
         'cluster' => 'redis',
-        'prefix' => 'laravel_database_',
+        'prefix' => 'assignment_help_expert_database_',
       ),
       'default' => 
       array (
@@ -463,11 +464,11 @@
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.mailtrap.io',
+        'host' => 'sandbox.smtp.mailtrap.io',
         'port' => '2525',
-        'encryption' => NULL,
-        'username' => NULL,
-        'password' => NULL,
+        'encryption' => 'tls',
+        'username' => 'e9c1ceb6acd098',
+        'password' => '77f14e1f2f1dd0',
       ),
       'ses' => 
       array (
@@ -490,8 +491,8 @@
     ),
     'from' => 
     array (
-      'address' => NULL,
-      'name' => 'Laravel',
+      'address' => 'info@assignmenthelpexpert.uk',
+      'name' => 'Assignment_help_expert',
     ),
     'markdown' => 
     array (
@@ -585,7 +586,7 @@
       0 => 2,
       1 => 100,
     ),
-    'cookie' => 'laravel_session',
+    'cookie' => 'assignment_help_expert_session',
     'path' => '/',
     'domain' => NULL,
     'secure' => NULL,

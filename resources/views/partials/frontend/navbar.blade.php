@@ -65,6 +65,7 @@
 
 
 <section class="bg-primary-one overflow-hidden p-10">
+<div class="container">
 
     <nav class="border-gray-200 px-2 mb-10">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
@@ -160,6 +161,7 @@
             </div>
         </div>
     </nav>
+</div>
 
 
 

@@ -37,7 +37,7 @@ class OrderController extends Controller
         $fares= Fare::all();
         return view('pages.order', compact('paper_types','fares', 'academic_levels', 'deadlines', 'reference_styles', 'subjects', 'countries', 'web_setting'));
     }
-    public function store(Request $request)
+    public function store(StoreOrderRequest $request)
     {
         {
             //    return $request;
@@ -98,10 +98,10 @@ class OrderController extends Controller
                     }
                 }
                 // Send mail to user
-                //  Mail::to($request->email)->send(new OrderMail($request, $files));
+                 Mail::to($request->email)->send(new OrderMail($request, $files));
 
                 // Send mail to admin
-                //   Mail::to(env('MAIL_FROM_ADDRESS', config('app.app_email')) )->send(new OrderAdminMail($request, $files));
+                  Mail::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files));
 
                 DB::commit();
 
