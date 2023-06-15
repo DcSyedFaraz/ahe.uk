@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes(['register' => false]);
+
+
+
+
+// Admin routes
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth']],function () {
+Route::get('/', 'HomeController@index')->name('home');
+
+// Web_Setting
+Route::resource('web-setting', 'WebSettingController',['only'=> 'index', 'edit', 'update']);
+
+//Service
+Route::resource('services','ServiceController');
+
+//Blogs
+Route::resource('blogs','BlogsController');
+
+
+
+
 });
 
-
+// Web routes
 Route::group(['namespace'=> 'Web'], function(){
     Route::get('/', 'PagesController@index')->name('home');
     Route::get('/about-us' ,'PagesController@about')->name('about');
@@ -33,3 +53,7 @@ Route::group(['namespace'=> 'Web'], function(){
     Route::post('/contact',   "ContactController@store")->name('contact.store');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

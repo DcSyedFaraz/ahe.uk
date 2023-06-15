@@ -37,5 +37,19 @@ class Order extends Model
         return $this->hasMany(File::class);
     }
 
+    public function deadlineName()
+    {
+        return $this->belongsTo(Deadline::class,'deadline', 'id');
+    }
+
+    public function styleName()
+    {
+        return $this->belongsTo(RefrenceStyle::class,'reference_style', 'id');
+    }
+    public function subjectName()
+    {
+        return $this->belongsTo(Subject::class,'subject', 'id');
+    }
+
 
 }

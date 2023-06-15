@@ -187,7 +187,7 @@
                 <h4 class="text-2xl font-bold ">
                     Avail Uk's <span class="text-orange-500">Best Affordable Assignment Help</span> Online
                 </h4>
-                <div class="m-24">
+                <div class="md:m-24">
 
                     <!------------- Courses Div 1 ----------->
                     <div

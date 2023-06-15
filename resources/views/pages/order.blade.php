@@ -587,7 +587,7 @@
         const phoneInputField = document.querySelector("#phone");
         // console.log(phoneInputField);
         const phoneInput = window.intlTelInput(phoneInputField, {
-            preferredCountries: ["AE"],
+            preferredCountries: ["GB"],
             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         });
         // console.log(phoneInput);

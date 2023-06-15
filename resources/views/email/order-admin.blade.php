@@ -44,7 +44,7 @@
                                                         <br>
                                                         <strong>  Detail : {{ $data['detail'] }}</strong>
                                                         <br>
-                                                        <strong>  Reference Style : {{ $data['reference_style'] }}</strong>
+                                                        <strong>  Reference Style : {{ $order->styleName->name }}</strong>
                                                         <br>
                                                         <strong>  Deadline : {{ $data['deadline'] }}</strong>
                                                         <br>
@@ -52,11 +52,9 @@
                                                         <br>
                                                         <strong>  Total Price : {{ $data['total_price'] .'AED' }}</strong>
                                                         <br>
-                                                        <strong>  Style : {{ $data['style'] }}</strong>
+                                                        <strong>  References : {{ $data['style'] }}</strong>
                                                         <br>
-                                                       
-                                                        <br>
-                                                        <strong>  Subject : {{ $data['subject'] }}</strong>
+                                                        <strong>  Subject : {{ $order->subjectName->name }}</strong>
                                                         <br>
                                                         <br>
                                                     </div>
@@ -75,7 +73,7 @@
                                                     style="border-collapse:collapse;border:0;margin:0;padding:20px;color:#555559;font-family:Arial,sans-serif;font-size:12px;line-height:16px;vertical-align:middle;text-align:center;width:580px">
                                                     <div>
                                                         <b>{{config('app.app_name')}}</b>
-                                                        <br> © 2022
+                                                        <br> © {{now()->year}}
                                                         <br>
                                                     </div>
                                                 </td>

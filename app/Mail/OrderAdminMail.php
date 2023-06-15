@@ -12,15 +12,17 @@ class OrderAdminMail extends Mailable
     use Queueable, SerializesModels;
     protected $data;
     protected $attachmentsPath;
+    protected $order;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($request, $files)
+    public function __construct($request, $files, $order)
     {
         $this->data = $request->all();
         $this->attachmentsPath = $files;
+        $this->order = $order;
     }
 
     /**
@@ -30,7 +32,7 @@ class OrderAdminMail extends Mailable
      */
     public function build()
     {
-        $email = $this->markdown('email.order-admin')->subject('Order Placement ')->with(["data" => $this->data,]);
+        $email = $this->markdown('email.order-admin')->subject('Order Placement ')->with(["data" => $this->data, "order"=>$this->order,]);
 
         foreach ($this->attachmentsPath as $filePath) {
             $email->attachFromStorage('/public/'. $filePath);

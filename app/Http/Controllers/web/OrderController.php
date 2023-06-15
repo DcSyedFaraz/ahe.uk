@@ -73,7 +73,6 @@ class OrderController extends Controller
 
                 //Dynamic getting price from database according to deadline and Academic level
                 $fare = Fare::where(['academic_level_id' => $request->academic_level, 'deadline_id' => $request->deadline])->firstOrFail();
-                // dd($request);
                 $request->merge([
                     'cost_per_page' => $fare->per_page_price,
                     "total_price" => ($fare->per_page_price * $request->number_of_pages),
@@ -84,6 +83,8 @@ class OrderController extends Controller
                 DB::beginTransaction();
 
                 $order = Order::create($request->all());
+                // return $order->subjectName;
+
                 if ($request->hasfile('emailAttachments')) {
                     foreach ($request->file('emailAttachments') as $file) {
                         $fileName = uniqid() . '_' . time() . '_' . $file->getClientOriginalName();
@@ -98,10 +99,10 @@ class OrderController extends Controller
                     }
                 }
                 // Send mail to user
-                 Mail::to($request->email)->send(new OrderMail($request, $files));
+                 Mail::to($request->email)->send(new OrderMail($request, $files, $order));
 
                 // Send mail to admin
-                  Mail::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files));
+                  Mail::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files, $order));
 
                 DB::commit();
 
