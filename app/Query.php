@@ -16,4 +16,8 @@ class Query extends Model
         'phone',
         'university',
     ];
+    public function deadlineName()
+    {
+        return $this->belongsTo(Deadline::class,'deadline', 'id');
+    }
 }

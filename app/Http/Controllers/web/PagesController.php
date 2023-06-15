@@ -23,6 +23,7 @@ class PagesController extends Controller
     }
     public function queryStore( Request $request){
         $query =  Query::create($request->all());
+        // return $query->deadlineName;
         // Send mail to user
         Mail::to($query->email)->send(new QueryMail($query));
         // Send mail to admin

@@ -1,3 +1,67 @@
+<style>
+    input[type=range] {
+        -webkit-appearance: none;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        animate: 0.2s;
+        background: #F68800;
+        border-radius: 25px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -8px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #f4c803;
+    }
+
+    .range-wrap {
+
+        position: relative;
+    }
+
+    .range-value {
+        position: absolute;
+        top: -50%;
+    }
+
+    .range-value span {
+        width: 30px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        background: #03a9f4;
+        color: #fff;
+        font-size: 12px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-radius: 6px;
+    }
+</style>
+
+
+
+
 <!------------------------- Hero Section Start ----------------------->
 <div class=" bg-orange  bg-coover pb-24 mb-[8.5rem] bg-left-bottom
  bg-repeat">

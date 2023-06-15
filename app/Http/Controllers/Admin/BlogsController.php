@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class BlogsController extends Controller
 {
@@ -73,9 +74,11 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Blog $blog, $slug)
     {
-        //
+        $blog = Blog::where(['slug' => $slug, 'is_published' => 1])->firstOrFail();
+        return view('pages.blogs.show', compact('blog'));
+
     }
 
     /**
@@ -128,6 +131,12 @@ class BlogsController extends Controller
         return redirect()->route('admin.blogs.index');
     }
 
+    public function getSlug(Request $request){
+        $request->validate([
+            'title' => 'required|string',
+        ]);
+        return Str::slug($request->title);
 
+    }
 
 }

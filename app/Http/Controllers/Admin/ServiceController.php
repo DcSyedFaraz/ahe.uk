@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+
 
 class ServiceController extends Controller
 {
@@ -108,5 +110,12 @@ class ServiceController extends Controller
         return redirect()->route('admin.services.index');
     }
 
-    
+    public function getSlug(Request $request){
+        $request->validate([
+            'title' => 'required|string',
+        ]);
+        return Str::slug($request->title);
+
+    }
+
 }

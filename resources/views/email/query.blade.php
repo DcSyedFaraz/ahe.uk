@@ -38,7 +38,7 @@
                                                         <br>
                                                         <strong>Subject :  {{$query->subject}}</strong>
                                                         <br>
-                                                        <strong>Deadline :  {{$query->deadline}}</strong>
+                                                        <strong>Deadline :  {{$query->deadlineName->name}}</strong>
                                                         <br>
                                                         <strong>University :  {{$query->university}}</strong>
                                                         <br>
