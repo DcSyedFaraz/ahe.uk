@@ -101,9 +101,9 @@
                     Download Our App
                 </h6>
 
-                <div class="flex justify-evenly">
+                <div class="flex ">
                     <img src="images/Group 41applepay.png" alt="">
-                    <img src="images/Group 42googlepay.png" alt="">
+                    <img class="mx-4" src="images/Group 42googlepay.png" alt="">
                 </div>
                 <h6 class="text-xl font-bold text-white  mt-2 mb-2">
                     Secure Payment

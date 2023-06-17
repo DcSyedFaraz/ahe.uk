@@ -44,6 +44,8 @@ Route::group(['namespace' => 'Web'], function () {
     //Order
     Route::get('/order', 'OrderController@create')->name('order');
     Route::post('/order', 'OrderController@store')->name('order.store');
+    Route::get('/invoice', "OrderController@invoice")->name('invoice');
+
 
     Route::post('/', 'PagesController@queryStore')->name('form.submit');
 

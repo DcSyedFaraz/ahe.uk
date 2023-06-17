@@ -1,5 +1,6 @@
 <?php
 
+use App\Status;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PermissionSeeder::class,
-            // RoleSeeder::class,
+            RoleSeeder::class,
+            StatusSeeder::class,
             // PermissionRoleTableSeeder::class,
             // UsersTableSeeder::class,
             // RoleUserTableSeeder::class,

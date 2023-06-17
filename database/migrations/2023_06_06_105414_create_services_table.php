@@ -21,7 +21,7 @@ class CreateServicesTable extends Migration
             $table->string('canonical')->unique()->nullable();
             $table->text('meta_description')->unique()->nullable();
             $table->longText('html')->unique()->nullable();
-            $table->biginteger('user_id')->unsigned();
+            $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->boolean('is_published')->default(true);
             $table->timestamps();
