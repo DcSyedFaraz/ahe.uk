@@ -15,6 +15,8 @@ class Order extends Model
     'name'
     ,'email'
     ,'phone'
+    ,'user_id'
+    ,"status_id"
     ,'subject'
     ,'style'
     ,'country'
@@ -49,6 +51,19 @@ class Order extends Model
     public function subjectName()
     {
         return $this->belongsTo(Subject::class,'subject', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id','id' );
+    }
+    public function invoice()
+    {
+        return $this->hasOne('App\Invoice');
+    }
+    public function status()
+    {
+        return $this->belongsTo(Status::class,'status_id', 'id');
     }
 
 

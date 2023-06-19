@@ -18,6 +18,10 @@ class CreateOrdersTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedInteger('status_id')->default(1);
+            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
             $table->string('country');
             $table->string('subject');
             $table->string('paper_type');

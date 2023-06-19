@@ -29,5 +29,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    
+    'payment' => [
+        'url'   => env('PAYMENT_APP_URL'),
+        'key'   => env('APP_SLUG'),
+        'token' => env('PAYMENT_APP_TOKEN'),
+    ],
 
 ];

@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderAdminMail;
 use App\Mail\OrderMail;
+use App\Mail\UserCreateMail;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -43,8 +44,7 @@ class OrderController extends Controller
         return view('pages.order', compact('paper_types', 'fares', 'academic_levels', 'deadlines', 'reference_styles', 'subjects', 'countries', 'web_setting'));
     }
     public function store(StoreOrderRequest $request)
-    {
-        {
+    { {
             //    return $request;
 
             if ($request->hasfile('emailAttachments')) {
@@ -105,7 +105,7 @@ class OrderController extends Controller
 
                 $user->roles()->sync(2);
                 // Send mail to user
-                // Mail::to($user->email)->send(new UserCreateMail($user, $this->password));
+                // Mail::to($user->email)->send(new UserCreateMail($user, $password));
 
                 $request->merge(['user_id' => $user->id, 'package_id' => $request->package]);
 
@@ -155,8 +155,10 @@ class OrderController extends Controller
             // // Send mail to admin
             // Mail::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files, $order));
 
+
+
+
             DB::commit();
-// dd($invoice->ref_no);
             return redirect()->route('invoice', ['reference' => $invoice->ref_no]);
 
             //  return $order;

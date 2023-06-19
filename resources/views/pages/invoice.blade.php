@@ -71,7 +71,7 @@
 
 
                         <div class="w-full px-6 py-4">
-                            <a href="{{ url('https://checkout.cvwriters.ae/payment?reference=' . $invoice->ref_no . '&gateway=stripe&source=crw') }}"
+                            <a href="{{ url('http://127.0.0.1:8002/payment?reference=' . $invoice->ref_no . '&gateway=stripe&source=crw') }}"
                                 class="btn block">
                                 {{ 'Pay ' . $invoice->amount}}
                             </a>

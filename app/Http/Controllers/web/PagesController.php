@@ -25,9 +25,9 @@ class PagesController extends Controller
         $query =  Query::create($request->all());
         // return $query->deadlineName;
         // Send mail to user
-        Mail::to($query->email)->send(new QueryMail($query));
+        // Mail::to($query->email)->send(new QueryMail($query));
         // Send mail to admin
-        Mail::to('dcsyedfaraz@gmail.com')->send(new QueryAdminMail($query));
+        // Mail::to('dcsyedfaraz@gmail.com')->send(new QueryAdminMail($query));
 
         return redirect()->back()->withSuccess("Thank you for showing your intrest, We've receive your query successfully.");
 

@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::group(['prefix' => 'v1', 'as' => 'api', 'namespace' => 'API\V1', 'middleware' => 'check.token'], function () {
+
+    //Order
+    Route::apiResource('orders', 'OrdersApiController');
+
+    //Invoice
+    Route::apiResource('invoices', 'InvoiceApiController');
 });
