@@ -29,7 +29,7 @@ class InvoiceApiController extends Controller
             } else {
                 $invoices = Invoice::with('order', 'user', 'status')->orderBy('created_at','desc')->get();
             }
-
+// dd($invoice);
             return InvoiceResource::collection($invoices)
                 ->response()
                 ->setStatusCode(Response::HTTP_OK);
@@ -57,7 +57,7 @@ class InvoiceApiController extends Controller
      */
     public function show(Invoice $invoice)
     {
-        $invoice->load('user', 'status', 'order', 'order.careerLevel', 'order.orderService', 'order.deadlineOrder','order.packageOrder');
+        $invoice->load('user', 'status', 'order', 'order.papertype');
 
         return (new InvoiceResource($invoice))
             ->response()

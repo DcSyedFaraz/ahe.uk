@@ -18,7 +18,7 @@ class PagesController extends Controller
 
     public function about(){
 
-        // return true;
+        // dd(addCurrency(4));
         return view('pages.about');
     }
     public function queryStore( Request $request){

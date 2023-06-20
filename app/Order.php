@@ -65,6 +65,10 @@ class Order extends Model
     {
         return $this->belongsTo(Status::class,'status_id', 'id');
     }
+    public function papertype()
+    {
+        return $this->belongsTo(PaperType::class, 'paper_type', 'id');
+    }
 
 
 }

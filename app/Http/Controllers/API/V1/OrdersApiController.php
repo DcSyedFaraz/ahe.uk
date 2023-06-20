@@ -54,7 +54,11 @@ class OrdersApiController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::with( 'status', 'user', 'invoice.status' )->findOrFail($id);
+
+        return (new OrderResource($order))
+        ->response()
+        ->setStatusCode(Response::HTTP_OK);
     }
 
     /**
@@ -64,9 +68,11 @@ class OrdersApiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Order $order)
     {
-        //
+        return (new OrderResource($order))
+            ->response()
+            ->setStatusCode(Response::HTTP_ACCEPTED);
     }
 
     /**

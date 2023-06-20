@@ -26,8 +26,8 @@ class InvoiceResource extends JsonResource
             "amount"        => $this->amount,
             "created_at"    => $this->created_at,
             "updated_at"    => $this->updated_at,
-            // "amount_pretty"        => addCurrency($this->amount),
-            // "created_at_pretty"    => showDate($this->created_at),
+            "amount_pretty"        => addCurrency($this->amount),
+            "created_at_pretty"    => showDate($this->created_at),
         ];
     }
 }

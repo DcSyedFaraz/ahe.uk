@@ -15,7 +15,7 @@ class CheckToken
      */
     public function handle($request, Closure $next)
     {
-        dd($request);
+        // dd($request);
         if (!$request->hasHeader('Authorization')) {
             abort(401, 'Unauthorized');
         }
