@@ -10,7 +10,7 @@
     <nav class="border-gray-200 px-2 mb-10">
         <div class=" flex items-center justify-between">
             <a href="{{ route('home') }}" class="flex">
-                <img src="images/logo.png" alt="">
+                <img src="{{asset ('images/logo.png')}}" alt="">
             </a>
 
             <div class="flex md:order-2">
@@ -45,7 +45,7 @@
             <div class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1" id="mobile-menu-3">
                 <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
                     <li class="lg:flex">
-                        <img class="hidden lg:flex animate-bounce" src="images/nav iconelectric.png" alt="">
+                        <img class="hidden lg:flex animate-bounce" src="{{asset ('images/nav iconelectric.png')}}" alt="">
                         <a href="{{ route('blog') }}" class="ext-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0">Blog</a>
 
 
@@ -53,7 +53,7 @@
                     </li>
 
                     <li class="lg:flex">
-                        <img class="hidden lg:flex animate-bounce h-[43px] w-[47px]" src="images/Group44.png" alt="">
+                        <img class="hidden lg:flex animate-bounce h-[43px] w-[47px]" src="{{asset ('images/Group44.png')}}" alt="">
                         <a href="{{ route('about') }}"
                             class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
                             aria-current="page">
@@ -69,7 +69,7 @@
 
                     <li class="lg:flex">
                         <div>
-                            <img class="hidden lg:flex animate-bounce" src="images/nav icon 2percent.png"
+                            <img class="hidden lg:flex animate-bounce" src="{{asset ('images/nav icon 2percent.png')}}"
                                 alt="">
                         </div>
                         <div @click.away="open = false" class="relative whitespace-nowrap inline-flex" x-data="{ open: false }">
@@ -117,7 +117,7 @@
                     </li>
                     <li class="lg:flex">
                         <div>
-                            <img class="hidden lg:flex animate-bounce" src="images/Group 44track.png" alt="">
+                            <img class="hidden lg:flex animate-bounce" src="{{asset ('images/Group 44track.png')}}" alt="">
                         </div>
 
                         <a href="{{ route('contact')}}"
@@ -127,7 +127,7 @@
                     </li>
                     <li class="lg:flex">
                         <div>
-                            <img class="hidden lg:flex animate-bounce" src="images/Rectanglecart.png" alt="">
+                            <img class="hidden lg:flex animate-bounce" src="{{asset ('images/Rectanglecart.png')}}" alt="">
                         </div>
 
                         <a href="{{ route('order') }}"
@@ -144,7 +144,7 @@
 
 
     <!-- This Script is used for mobile responsive navbar -->
-    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+    <script src= "https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
     <!--  -->
 
 </section>

@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.web')
+
+@section('title', 'Verification')
+@section('description', '')
+@section('canonical', config('app.url') . Request::path() )
 
 @section('content')
 <div class="container">

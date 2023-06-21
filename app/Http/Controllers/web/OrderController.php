@@ -30,6 +30,14 @@ use League\CommonMark\Reference\Reference;
 
 class OrderController extends Controller
 {
+    public $password;
+
+
+    public function __construct() {
+        $this->password = Str::random(8);
+    }
+
+
     public function create()
     {
         // return true;
@@ -79,7 +87,8 @@ class OrderController extends Controller
                 'deadline' => $fare->deadline->name,
             ]);
             // dd($request);
-            $password = Str::random(8);
+            // $password = Str::random(8);
+            // $this->password = $password;
 
             DB::beginTransaction();
 
@@ -99,7 +108,7 @@ class OrderController extends Controller
                         'email'    =>  request('email'),
                         'phone'     => request('phone'),
                         'country'   => request('country'),
-                        'password'  => Hash::make($password),
+                        'password'  => Hash::make($this->password),
                     ],
                 );
 
@@ -143,14 +152,14 @@ class OrderController extends Controller
             }
             $data = [
                 'user' => $user,
-                'password' => $password,
+                'password' => $this->password,
                 'files' => $files,
                 'order' => $order,
                 'flag' => $flag,
                 'invoice' => $invoice,
             ];
             // Send mail to user
-            // Mail::to($request->email)->send(new OrderMail($request, $files, $order));
+            // Mail::to($request->email)->send(new OrderMail($data));
 
             // // Send mail to admin
             // Mail::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files, $order));
@@ -163,11 +172,15 @@ class OrderController extends Controller
 
             //  return $order;
             // return redirect()->back()->withSuccess("Thank you for showing your intrest, We've receive your query successfully.");
+
+            // return view('pages.about', compact('data'));
+
         }
     }
 
     public function invoice(Request $request)
     {
+
         // dd($request);
         if ($request->query('reference')) {
 
@@ -177,7 +190,6 @@ class OrderController extends Controller
             if (session('userData.userId') !=  $invoice->user_id) {
                 session()->forget('userData');
             }
-
 
             return view('pages.invoice', compact('invoice', 'order'));
         }
