@@ -78,7 +78,7 @@ class InvoiceApiController extends Controller
         $invoice->update($request->all());
 
         if($invoice->status_id==5){
-            // Mail::to($invoice->user->email)->send(new PaymentPaidMail($invoice));
+            Mail::to($invoice->user->email)->send(new PaymentPaidMail($invoice));
             // Mail::to(env('MAIL_FROM_ADDRESS','info@cheapresumewriter.com'))->send(new PaymentPaidMail($invoice));
         }
 

@@ -46,7 +46,7 @@
             </div>
             <div class="mx-auto">
                 <div class=" px-4 space-y-4">
-                    <div class="border rounded-2xl max-w-sm mx-auto" style="box-shadow: 0 0 5px 2px rgb(0 0 0 / 16%);">
+                    <div class="border rounded-2xl bg-white max-w-sm mx-auto" style="box-shadow: 0 0 5px 2px rgb(0 0 0 / 16%);">
                         <h4 class="py-2 text-xl text-center px-6 text-primary-two font-bold">Order Summary</h4>
                         <hr class="border-[2px]">
                         <ul class="my-2 space-y-1 ">
@@ -61,7 +61,7 @@
                                     class="float-right">{{ $order->deadline ?? '-' }}</strong></li>
                             <hr class="border-[2px]">
                             <li class="space-x-3 text-xl text-primary-two py-3 px-6"><strong>Total Amount:</strong><strong
-                                    class="float-right ">{{$invoice->amount }}</strong></li>
+                                    class="float-right ">{{addCurrency($invoice->amount) }}</strong></li>
 
 
                         </ul>
@@ -70,10 +70,10 @@
 
 
 
-                        <div class="w-full px-6 py-4">
+                        <div class="w-full px-6 py-4 text-center">
                             <a href="{{ url('http://127.0.0.1:8002/payment?reference=' . $invoice->ref_no . '&gateway=stripe&source=crw') }}"
                                 class="btn block">
-                                {{ 'Pay ' . $invoice->amount}}
+                                {{ 'Pay ' . addCurrency($invoice->amount)}}
                             </a>
                         </div>
 

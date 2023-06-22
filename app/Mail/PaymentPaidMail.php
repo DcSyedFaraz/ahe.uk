@@ -29,7 +29,7 @@ class PaymentPaidMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('email.payment-paid')->subject('Cheap Resume Writing Payment Confirmation')->with(["invoice"=>$this->invoice]);
+        return $this->markdown('email.payment-paid')->subject('Assignment Help Expert Payment Confirmation')->with(["invoice"=>$this->invoice]);
 
     }
 }

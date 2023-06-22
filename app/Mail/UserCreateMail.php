@@ -32,6 +32,7 @@ class UserCreateMail extends Mailable
      */
     public function build()
     {
+        // dd($this->user);
         return $this->markdown('email.user-create')->subject('Account Created')->with(['user' => $this->user, 'password' =>$this->password]);
     }
 }

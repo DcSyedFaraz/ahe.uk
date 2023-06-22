@@ -7,11 +7,15 @@ use App\Mail\QueryAdminMail;
 use App\Mail\QueryMail;
 use App\Query;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller
 {
     public function index(){
+
+        // Auth::logout();
+        // dd(Auth::user());
 
         return view('pages.home');
     }

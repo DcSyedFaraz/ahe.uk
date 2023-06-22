@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             StatusSeeder::class,
             // PermissionRoleTableSeeder::class,
-            // UsersTableSeeder::class,
+            UserSeeder::class,
             // RoleUserTableSeeder::class,
             WebSettingSeeder::class,
             // ServiceTableSeeder::class,

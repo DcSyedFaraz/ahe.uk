@@ -758,8 +758,8 @@
 
                                                             <div
                                                                 style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: right; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%;"><span
-                                                                        style="font-size: 16px; line-height: 22.4px;"><strong>Details</strong></span>
+                                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span
+                                                                        style="font-size: 16px; line-height: 22.4px; "><strong>Details</strong></span>
                                                                 </p>
                                                             </div>
 
@@ -1171,7 +1171,7 @@
 
                                                             <div
                                                                 style="font-size: 14px; color: #ffffff; line-height: 140%; text-align: right; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%;"><span
+                                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span
                                                                         style="font-size: 16px; line-height: 22.4px;"><strong>Details</strong></span>
                                                                 </p>
                                                             </div>
@@ -1500,8 +1500,9 @@
 
                                                             <div
                                                                 style="font-size: 14px; line-height: 140%; text-align: right; word-wrap: break-word;">
-                                                                <p style="line-height: 140%;">
-                                                                    {{ $data['order']->styleName->name ?? '-' }}</p>
+                                                                <div>
+                                                                    <div>{{ $data['order']->styleName->name ?? '-' }}</div>
+                                                                </div>
                                                             </div>
 
                                                         </td>
@@ -1944,7 +1945,7 @@
                                                             <div
                                                                 style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
                                                                 <p
-                                                                    style="font-size: 14px; line-height: 140%; text-align: right;">
+                                                                    style="font-size: 14px; line-height: 140%; text-align: left;">
                                                                     <span
                                                                         style="font-size: 16px; line-height: 22.4px;"><strong>Total
                                                                             amount:</strong></span>

@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -37,4 +42,32 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    /**
+     * Login the admin.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    // public function login(Request $request)
+    // {
+    //     $this->validator($request);
+    //      if(Auth::attempt($request->only('email','password'), $request->filled('remember'))){
+
+    //         // ->hasRoleId(2)
+    //         if(Auth::user()->hasRoleId(2)){
+    //             // dd(Auth::user());
+    //             return redirect(route('customer.home'))->with('status', 'You are Logged in as Customer!');
+
+    //         }
+    //          else {
+    //             //Authentication passed...
+    //             return redirect(route('admin.home'))->with('status', 'You are Logged in as Admin!');
+    //         }
+
+    //     }
+
+    //     // Authentication failed
+    //     return $this->loginFailed();
+    // }
 }
