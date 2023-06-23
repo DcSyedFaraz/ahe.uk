@@ -23,6 +23,7 @@ class Order extends Model
     ,'academic_level'
     ,'paper_type'
     ,'deadline'
+    ,'deadline_id'
     ,'paper_topic'
     ,'subject'
     ,'number_of_pages'
@@ -41,7 +42,7 @@ class Order extends Model
 
     public function deadlineName()
     {
-        return $this->belongsTo(Deadline::class,'deadline', 'id');
+        return $this->belongsTo(Deadline::class,'deadline_id', 'id');
     }
 
     public function styleName()
@@ -66,6 +67,10 @@ class Order extends Model
         return $this->belongsTo(Status::class,'status_id', 'id');
     }
     public function papertype()
+    {
+        return $this->belongsTo(PaperType::class, 'paper_type', 'id');
+    }
+    public function packageOrder()
     {
         return $this->belongsTo(PaperType::class, 'paper_type', 'id');
     }

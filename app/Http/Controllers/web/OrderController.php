@@ -115,15 +115,17 @@ class OrderController extends Controller
                 $user->roles()->sync(2);
                 // Send mail to user
                 // Mail::to($user->email)->send(new UserCreateMail($user, $password));
-
-                $request->merge(['user_id' => $user->id, 'package_id' => $request->package]);
-
+                $deadline_id =  Deadline::where('name', $request->deadline)->first();
+                $request->merge(['user_id' => $user->id, 'package_id' => $request->package, 'deadline_id' =>$deadline_id->id]);
                 // $this->user_created = true;
 
                 session()->flash('userData', ['userEmail' => 'Customer Account' . ' ' . $user->email . ' ' . 'created successfully check your email for login credentials', 'userId' => $user->id]);
             }
 
-            $order = Order::create($request->all());
+            $order = Order::create(
+
+                $request->all()
+            );
             // return $order->subjectName;
             // dd($request->total_price);
             // Generating Invoice before order placing

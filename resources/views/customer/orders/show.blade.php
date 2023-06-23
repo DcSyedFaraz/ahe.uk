@@ -40,7 +40,7 @@
                                 <dt class="col-sm-3 text-right mb-0">Package:</dt>
                                 <dd class="col-sm-9 mb-0">{{$order->packageOrder->name}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Deadline:</dt>
-                                <dd class="col-sm-9 mb-0">{{$order->DeadlineOrder->name}}</dd>
+                                <dd class="col-sm-9 mb-0">{{$order->deadlineName->name}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Career Level:</dt>
                                 <dd class="col-sm-9 mb-0">{{$order->careerLevel->name ?? ''}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Date:</dt>
@@ -129,7 +129,7 @@
                                     </strong>
                                 </li>
                                 <li>{{ auth()->user()->name }}</li>
-                                <li>{{ auth()->user()->email }}</li>                                
+                                <li>{{ auth()->user()->email }}</li>
                                 {{-- <li>{{ auth()->user()->phone ?? '-' }}</li> --}}
                                 <li></li>
                             </ul>
@@ -142,27 +142,27 @@
                         <div class="card-body">
                             <div style="margin-left: 10px">
                                 <div><strong>files</strong>
-                                    <br> 
-                                @if ($files)
-                                   
-                                    @foreach ( $files as $file )
-                                    <a href="{{ asset('storage/'.$file->file_path) }}"  target="_blank">{{ trim($file->file_path,'uploads/') }}</a>      
                                     <br>
-                                    
+                                @if ($files)
+
+                                    @foreach ( $files as $file )
+                                    <a href="{{ asset('storage/'.$file->file_path) }}"  target="_blank">{{ trim($file->file_path,'uploads/') }}</a>
+                                    <br>
+
                                     @endforeach
-                                 
+
                                 @else
                                     <p>No files Attached</p>
-                                    @endif 
+                                    @endif
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            
+
 
         </div>
     </div>

@@ -45,7 +45,7 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $invoice->order->packageOrder->name ?? '' }}</td>
-                                    <td>{{ $invoice->order->careerLevel->name }}</td>
+                                    <td>{{ $invoice->order->academic_level }}</td>
                                     <td>{{ addCurrency($invoice->amount) }}</td>
                                     <td>
                                         @if ($invoice->status_id == 4)

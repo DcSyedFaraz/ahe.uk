@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Invoice;
+use App\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class InvoicesController extends Controller
 {
@@ -12,9 +15,25 @@ class InvoicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if( $request->query('status') ){
+            $status = Status::where('slug', '=', $request->query('status') )->firstOrFail();
+
+            $invoices = Invoice::where(['user_id' => Auth::user()->id, 'status_id' => $status->id ] )->orderBy('created_at','desc')->get();
+
+            $invoices_status = Status::where('for', '=', 'invoice' )->get();
+
+            // return $invoices;
+
+            return view('customer.invoices.index', compact('invoices', 'invoices_status'));
+        }
+
+        $invoices = Invoice::where('user_id', '=', Auth::user()->id )->orderBy('created_at','desc')->get();
+        // return $invoices;
+        $invoices_status = Status::where('for', '=', 'invoice' )->get();
+
+        return view('customer.invoices.index', compact('invoices', 'invoices_status'));
     }
 
     /**
@@ -44,9 +63,11 @@ class InvoicesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($ref_no)
     {
-        //
+        $invoice = Invoice::where('ref_no', '=', $ref_no )->with('order')->firstOrFail();
+
+        return view('customer.invoices.show', compact('invoice'));
     }
 
     /**

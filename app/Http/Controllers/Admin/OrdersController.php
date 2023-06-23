@@ -34,6 +34,8 @@ class OrdersController extends Controller
             $orders = Order::with( 'status', 'user','papertype','deadlineName','invoice.status' )->where(['status_id' => $status->id ])->orderBy('created_at','desc')->get();
         } else {
             $orders = Order::with( 'status', 'user', 'papertype','deadlineName','invoice.status')->orderBy('created_at','desc')->get();
+
+            // dd($orders);
         }
 // dd($orders);
         return OrderResource::collection($orders)->response();

@@ -31,6 +31,8 @@ class CreateOrdersTable extends Migration
             $table->string('reference_style');
             $table->integer('style');
             $table->string('deadline');
+            $table->unsignedInteger('deadline_id')->nullable();
+            $table->foreign('deadline_id')->references('id')->on('deadlines')->onDelete('cascade');
             $table->mediumText('detail')->nullable();
             // $table->boolean('is_complete')->default(false);
             // $table->boolean('spacing')->default(false);

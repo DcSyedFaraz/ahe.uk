@@ -16,6 +16,7 @@ class IsCustomer
      */
     public function handle($request, Closure $next)
     {
+        // dd($request);
         if (Auth::user()->hasRoleId(2)) {
             return $next($request);
         }

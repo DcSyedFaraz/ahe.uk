@@ -40,11 +40,11 @@
                                 <dt class="col-sm-3 text-right mb-0">Phone:</dt>
                                 <dd class="col-sm-9 mb-0">{{$order->phone}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Package:</dt>
-                                <dd class="col-sm-9 mb-0">{{$order->packageOrder->name}}</dd>
+                                <dd class="col-sm-9 mb-0">{{$order->papertype->name}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Deadline:</dt>
-                                <dd class="col-sm-9 mb-0">{{$order->DeadlineOrder->name}}</dd>
+                                <dd class="col-sm-9 mb-0">{{$order->deadlineName->name}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Level:</dt>
-                                <dd class="col-sm-9 mb-0">{{$order->careerLevel->name}}</dd>
+                                <dd class="col-sm-9 mb-0">{{$order->aca}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Date:</dt>
                                 <dd class="col-sm-9 mb-0">{{ showDate($order->created_at) }}</dd>
                             </dl>
@@ -116,7 +116,7 @@
                             <ul class="list-unstyled mb-0">
                                 <li>{{ auth()->user()->name }}</li>
                                 <li>{{ auth()->user()->email }}</li>
-                                
+
                                 <li></li>
                             </ul>
                         </div>
@@ -129,30 +129,30 @@
                         <div class="card-body">
                             <div style="margin-left: 10px">
                                 <div><strong>files</strong>
-                                    <br> 
+                                    <br>
 
                                  {{-- @dd($files)    --}}
                                @if ($files)
                                     {{-- @dd(true) --}}
                                     @foreach ( $files as $file )
-                                <a href="{{ asset('storage/'.$file->file_path) }}"  target="_blank">{{ trim($file->file_path,'uploads/') }}</a>      
+                                <a href="{{ asset('storage/'.$file->file_path) }}"  target="_blank">{{ trim($file->file_path,'uploads/') }}</a>
                                 <br>
                                 <br>
-                                @endforeach      
-                                    
+                                @endforeach
+
                                 @else
                                 <p>No files Attached</p>
-                                @endif   
+                                @endif
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-          
-            
+
+
         </div>
     </div>
     <!-- /.content -->

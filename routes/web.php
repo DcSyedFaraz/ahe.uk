@@ -18,14 +18,12 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['register' => true]);
 
 
-
-
 // Admin routes
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'verified', 'admin']], function () {
     Route::get('/', 'HomeController@index')->name('home');
 
     // Web_Setting
-    Route::resource('setting', 'WebSettingController', ['only' => 'index', 'edit', 'update']);
+    Route::resource('setting', 'WebSettingController');
 
     // Orders
     Route::get('get-orders', 'OrdersController@getOrders')->name('orders.get');
@@ -42,6 +40,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
      // Customers
      Route::resource('customers', 'CustomersController');
 
+     // Contacts
+     Route::get('get-contacts', 'ContactController@getContacts')->name('contacts.get');
+     Route::resource('contacts', 'ContactController');
+
     //Service
     Route::post('services/slug', 'ServiceController@getSlug')->name('services.getSlug');
     Route::resource('services', 'ServiceController');
@@ -50,6 +52,39 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('blogs/slug', 'BlogsController@getSlug')->name('blogs.getSlug');
     Route::resource('blogs', 'BlogsController');
 });
+
+//Customer Routes
+Route::group(['prefix' => 'customer', 'as' => 'customer.', 'namespace' => 'Customer', 'middleware' => [ 'auth', 'verified', 'customer']], function () {
+
+    Route::get('/', 'HomeController@index')->name('home');
+
+    // Orders
+    Route::resource('orders', 'OrdersController');
+
+    // Invoices
+    Route::resource('invoices', 'InvoicesController');
+
+    // Profile
+    Route::resource('profile', 'ProfileController')->only(['index', 'update']);
+    // Change
+    Route::get('change-password', 'ProfileController@changePassword')->name('profile.change-password');
+    Route::post('change-password', 'ProfileController@changePasswordUpdate')->name('profile.change-password.change');
+});
+
+
+//Change Password
+Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
+
+    if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
+        Route::get('password', 'ChangePasswordController@edit')->name('password.edit');
+        Route::post('password', 'ChangePasswordController@update')->name('password.update');
+        Route::post('profile', 'ChangePasswordController@updateProfile')->name('password.updateProfile');
+        Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
+    }
+});
+
+
+
 
 // Web routes
 Route::group(['namespace' => 'Web'], function () {
@@ -77,23 +112,6 @@ Route::group(['namespace' => 'Web'], function () {
 
 
 
-//Customer Routes
-Route::group(['prefix' => 'customer', 'as' => 'customer.', 'namespace' => 'Customer', 'middleware' => [ 'auth', 'verified', 'customer']], function () {
-
-    Route::get('/', 'HomeController@index')->name('home');
-
-    // Orders
-    Route::resource('orders', 'OrdersController');
-
-    // Invoices
-    Route::resource('invoices', 'InvoicesController');
-
-    // Profile
-    Route::resource('profile', 'ProfileController')->only(['index', 'update']);
-    // Change
-    Route::get('change-password', 'ProfileController@changePassword')->name('profile.change-password');
-    Route::post('change-password', 'ProfileController@changePasswordUpdate')->name('profile.change-password.change');
-});
 
 
 

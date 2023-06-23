@@ -49,7 +49,9 @@
         $( document ).ready(function() {
 
             const url = ('{{route('admin.orders.get', ['status' => request()->query('status') ?? '' ] )}}').replace('&amp;', '&');
-            // console.log(url);
+            console.log(url);
+
+
             $('#order-data-table').DataTable( {
                 "serverSide" : false,
                 "processing" : false,
@@ -84,7 +86,7 @@
                         }
                     },
                     {
-                        "data": "deadlineOrder",
+                        "data": "deadlineOrder.name",
                         "class" : "text-left",
                         "render": function (data, type, row) {
                             return data;

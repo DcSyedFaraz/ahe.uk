@@ -8,7 +8,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-          
+
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-lg-4 col-6">
@@ -83,12 +83,12 @@
                                         @foreach ($latestOrders as $latestOrder)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('admin.orders.show', $latestOrder->id)}}">
+                                                    <a href="{{route('customer.orders.show', $latestOrder->id)}}">
                                                         <strong># {{ $latestOrder->id }}</strong>
                                                     </a>
                                                 </td>
                                                 <td>{{ \Illuminate\Support\Str::limit(strip_tags($latestOrder->packageOrder->name), 35) }} </td>
-                                                <td>{{$latestOrder->careerLevel->name}}</td>
+                                                <td>{{$latestOrder->academic_level}}</td>
                                                 <td>{{ addCurrency($latestOrder->invoice->amount) }}</td>
                                                 <td>{{ showDate($latestOrder->created_at) }}</td>
                                                 <td>

@@ -68,7 +68,7 @@ class InvoicesController extends Controller
     {
 
         $invoice = Invoice::where('ref_no', '=', $ref_no )->with('order')->firstOrFail();
-
+        // dd($invoice);
         return view('admin.invoices.show', compact('invoice'));
     }
 

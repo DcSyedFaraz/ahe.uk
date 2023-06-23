@@ -16,7 +16,8 @@ class WebSettingController extends Controller
     public function index()
     {
         $setting= WebSetting::firstorfail();
-        return view('admin.websetting.index', compact('setting'));
+        // return $setting;
+        return view('admin.web-setting.index', compact('setting'));
 
     }
 
@@ -61,7 +62,7 @@ class WebSettingController extends Controller
     public function edit($id)
     {
         $setting = WebSetting::firstorfail();
-        return view('admin.websetting.edit', compact('setting'));
+        return view('admin.web-setting.edit', compact('setting'));
     }
 
     /**

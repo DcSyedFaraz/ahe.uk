@@ -28,7 +28,7 @@ class OrdersApiController extends Controller
         } else {
             // $orders = Order::all();
             // dd($orders);
-            $orders = Order::with('status','invoice', 'user','files', 'invoice.status' )->orderBy('created_at','desc')->get();
+            $orders = Order::with('status','invoice', 'user','files','deadlineName', 'invoice.status' )->orderBy('created_at','desc')->get();
 
             return OrderResource::collection($orders)->response()->setStatusCode(Response::HTTP_OK);
         }

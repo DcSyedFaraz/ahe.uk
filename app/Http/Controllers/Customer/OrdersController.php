@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers\Customer;
 
+use App\AcademicLevel;
+use App\Deadline;
 use App\Http\Controllers\Controller;
+use App\Invoice;
+use App\Order;
+use App\PaperType;
+use App\Status;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class OrdersController extends Controller
 {
@@ -12,9 +20,25 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if( $request->query('status') ){
+            $status = Status::where('slug', '=', $request->query('status') )->firstOrFail();
+
+            $orders = Order::where(['user_id' => Auth::user()->id, 'status_id' => $status->id ] )->orderBy('created_at','desc')->get();
+
+            $orders_status = Status::where('for', '=', 'order' )->get();
+
+            return view('customer.orders.index', compact('orders', 'orders_status'));
+        }
+
+
+        $orders = Order::where('user_id', '=', Auth::user()->id )->orderBy('created_at','desc')->get();
+        $orders_status = Status::where('for', '=', 'order' )->get();
+
+        return view('customer.orders.index', compact('orders', 'orders_status'));
+
+
     }
 
     /**
@@ -24,7 +48,11 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        //
+        $career_levels = AcademicLevel::all();
+        $order_services = PaperType::all();
+        $deadlines = Deadline::all();
+
+        return view('customer.orders.create', compact('career_levels', 'order_services', 'deadlines'));//
     }
 
     /**
@@ -35,7 +63,10 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->merge([ "user_id"=> auth()->user()->id, "email"=> auth()->user()->email]);
+        Order::create($request->all());
+
+        return redirect()->route('customer.orders.index')->withSuccess('Order Place Successfully');
     }
 
     /**
@@ -46,7 +77,9 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $files= $order->files;
+        return view('customer.orders.show', compact('order','files'));
     }
 
     /**
@@ -57,7 +90,8 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order=Order::findorFail($id);
+        return $order;
     }
 
     /**

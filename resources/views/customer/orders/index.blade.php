@@ -51,8 +51,8 @@
                                                 </td>
                                                 <td>{{ \Illuminate\Support\Str::limit(strip_tags($order->packageOrder->name), 35) }}
                                                 </td>
-                                                <td>{{ $order->careerLevel->name ?? '' }}</td>
-                                                <td>{{ $order->deadlineOrder->name ?? '' }}</td>
+                                                <td>{{ $order->academic_level ?? '' }}</td>
+                                                <td>{{ $order->deadlineName->name ?? '' }}</td>
                                                 <td>
                                                     <div class="d-flex justify-content-between px-3 bg-light py-2">
                                                         <span class="font-weight-bold">{{ addCurrency($order->invoice->amount)  }}</span>
