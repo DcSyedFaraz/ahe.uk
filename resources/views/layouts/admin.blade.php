@@ -24,7 +24,18 @@
     <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" rel="stylesheet" />
-    <style> .iti { width: 100%; } </style>
+    {{-- Bootstrap Icon --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    {{-- Favicon --}}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.ico') }}">
+
+
+
+    <style>
+        .iti {
+            width: 100%;
+        }
+    </style>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" />
 
     @yield('styles')
@@ -52,7 +63,8 @@
                             @foreach (config('panel.available_languages') as $langLocale => $langName)
                                 <a class="dropdown-item"
                                     href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
-                                    ({{ $langName }})</a>
+                                    ({{ $langName }})
+                                </a>
                             @endforeach
                         </div>
                     </li>
@@ -92,7 +104,9 @@
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
     <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
@@ -117,16 +131,17 @@
                     url: languages['{{ app()->getLocale() }}']
                 },
                 columnDefs: [
-                // {
-                //     orderable: false,
-                //     className: 'select-checkbox',
-                //     targets: 0
-                // },
-                {
-                    orderable: false,
-                    searchable: false,
-                    targets: -1
-                }],
+                    // {
+                    //     orderable: false,
+                    //     className: 'select-checkbox',
+                    //     targets: 0
+                    // },
+                    {
+                        orderable: false,
+                        searchable: false,
+                        targets: -1
+                    }
+                ],
                 select: {
                     style: 'multi+shift',
                     selector: 'td:first-child'

@@ -101,7 +101,7 @@
                                                 </a>
                                             </td>
                                             <td>{{ \Illuminate\Support\Str::limit(strip_tags($latestOrder->papertype->name ?? ''), 35) }} </td>
-                                            <td>{{$latestOrder->user->name}}</td>
+                                            <td>{{$latestOrder->user->name ?? ''}}</td>
                                             <td>{{$latestOrder->academic_level ?? ''}}</td>
                                             <td>{{ addCurrency($latestOrder->invoice->amount) }}</td>
                                             <td>{{ showDate($latestOrder->created_at) }}</td>

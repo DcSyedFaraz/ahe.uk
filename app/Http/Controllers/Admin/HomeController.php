@@ -36,7 +36,7 @@ class HomeController extends Controller
             'clearInvoices'     =>$invoices->where('status_id',5)->count(),
             'pendingInvoices'   => $orders->pluck('invoice')->where('status_id', 4)->count(),
         ];
-
+// dd($latestOrders);
         return view('admin.home', compact('data', 'latestOrders'));
     }
 }

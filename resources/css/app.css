@@ -47,5 +47,8 @@
      .contact-input{
         @apply border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 py-2 px-2 w-full border-[1px];
      }
+     .nav-text{
+        @apply text-base font-bold xl:text-lg lg:text-base text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0
+     }
 
 }

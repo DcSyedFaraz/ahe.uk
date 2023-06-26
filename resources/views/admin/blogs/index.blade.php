@@ -51,14 +51,14 @@
                                             </td>
                                             <td>
                                                 <div class="btn-group" >
-                                                    <a href='{{ route('admin.blogs.show', [$blog->slug]) }}' target="_blank" class='btn btn-sm btn-primary'><i class='bi bi-eye'></i> </a>
-                                                    <a href='{{ route('admin.blogs.edit', [$blog->id]) }}' role='button' class='btn btn-sm btn-info'> <i class='bi bi-pencil' ></i> </a>
+                                                    <a href='{{ route('admin.blogs.show', [$blog->slug]) }}' target="_blank" class='mx-1 btn btn-sm btn-primary'><i class='bi bi-eye'></i> </a>
+                                                    <a href='{{ route('admin.blogs.edit', [$blog->id]) }}' role='button' class='mx-1 btn btn-sm btn-info'> <i class='bi bi-pencil' ></i> </a>
 
                                                     <form action="{{ route('admin.blogs.destroy', $blog->id) }}" method="POST" onsubmit="return confirm('Are you sure? This will delete all related data also.');" style="display: inline-block;">
                                                         {{-- confirm('Are you sure?') return true which proceeds onsubmit--}}
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                        <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                        <button type="submit" class="mx-1 btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                                     </form>
                                                 </div>
                                             </td>

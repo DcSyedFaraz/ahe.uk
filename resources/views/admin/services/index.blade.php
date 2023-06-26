@@ -41,12 +41,12 @@
                                         </td>
                                         <td>
                                             <div class="btn-group" >
-                                                <a href='' target="_blank" service='button' class='btn btn-sm btn-primary'> <i class='bi bi-eye' ></i> </a>
-                                                <a href='{{ route('admin.services.edit', [$service->id]) }}' service='button' class='btn btn-sm btn-info'> <i class='bi bi-pencil' ></i> </a>
+                                                <a href='' target="_blank" service='button' class='mx-1 btn btn-sm btn-primary'> <i class='bi bi-eye' ></i> </a>
+                                                <a href='{{ route('admin.services.edit', [$service->id]) }}' service='button' class='mx-1 btn btn-sm btn-info'> <i class='bi bi-pencil' ></i> </a>
                                                 <form action="{{ route('admin.services.destroy', $service->id) }}" method="POST" onsubmit="return confirm('Are you sure? This will delete all related data also.');" style="display: inline-block;">
                                                     <input type="hidden" name="_method" value="DELETE">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <button type="submit" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                                    <button type="submit" class="mx-1 btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                                 </form>
                                             </div>
                                         </td>

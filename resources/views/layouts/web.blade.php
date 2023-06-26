@@ -37,7 +37,7 @@
     {{-- CUSTOM CSS --}}
     <link rel="stylesheet" href="{{ asset('css/frontend-customcss.css') }}">
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.ico') }}">
     {{-- swiper cdn --}}
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     {{-- AOS CSS CDN --}}
@@ -47,12 +47,14 @@
     <link rel="stylesheet" href="{{ asset('dist/css/app.css') }}">
 
 
+
+
     {{-- intl Tel Input CSS --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <style>
         .iti {
             width: 100%;
-            margin-top: 6px;
+            margin-top:11px;
         }
     </style>
 
@@ -166,7 +168,7 @@
     {{-- <script src="jquery.countup.js"></script> --}}
 
     @yield('scripts')
-    
+
 </body>
 
 </html>

@@ -40,9 +40,9 @@
                                 <dt class="col-sm-3 text-right mb-0">Package:</dt>
                                 <dd class="col-sm-9 mb-0">{{$order->packageOrder->name}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Deadline:</dt>
-                                <dd class="col-sm-9 mb-0">{{$order->deadlineName->name}}</dd>
+                                <dd class="col-sm-9 mb-0">{{$order->deadline}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Career Level:</dt>
-                                <dd class="col-sm-9 mb-0">{{$order->careerLevel->name ?? ''}}</dd>
+                                <dd class="col-sm-9 mb-0">{{$order->academic_level ?? ''}}</dd>
                                 <dt class="col-sm-3 text-right mb-0">Date:</dt>
                                 <dd class="col-sm-9 mb-0">{{ showDate($order->created_at) }}</dd>
                             </dl>

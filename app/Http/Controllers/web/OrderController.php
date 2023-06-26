@@ -91,9 +91,9 @@ class OrderController extends Controller
             // $this->password = $password;
 
             DB::beginTransaction();
-
+            // dd($request);
             $user = User::where(['email' => $request->email])->first();
-
+            // dd($user);
             // flag to check user is created default false
             $flag = false;
 
@@ -112,16 +112,18 @@ class OrderController extends Controller
                     ],
                 );
 
+            }
                 $user->roles()->sync(2);
-                // Send mail to user
-                // Mail::to($user->email)->send(new UserCreateMail($user, $password));
+
+               
+
+
                 $deadline_id =  Deadline::where('name', $request->deadline)->first();
                 $request->merge(['user_id' => $user->id, 'package_id' => $request->package, 'deadline_id' =>$deadline_id->id]);
                 // $this->user_created = true;
-
+                // dd($request);
                 session()->flash('userData', ['userEmail' => 'Customer Account' . ' ' . $user->email . ' ' . 'created successfully check your email for login credentials', 'userId' => $user->id]);
-            }
-
+            // dd($request);
             $order = Order::create(
 
                 $request->all()
@@ -161,10 +163,10 @@ class OrderController extends Controller
                 'invoice' => $invoice,
             ];
             // Send mail to user
-            // Mail::to($request->email)->send(new OrderMail($data));
+           //Mail:::to($request->email)->send(new OrderMail($data));
 
             // // Send mail to admin
-            // Mail::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files, $order));
+           //Mail:::to('dcsyedfaraz@gmail.com')->send(new OrderAdminMail($request, $files, $order));
 
 
 

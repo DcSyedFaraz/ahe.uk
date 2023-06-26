@@ -108,7 +108,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+                                <div class="hidden lg:grid grid-cols-2 gap-4 mx-4 my-1">
 
                                     <span>
                                         Paper Type:
@@ -142,7 +142,7 @@
 
                                 </div>
 
-                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+                                <div class="hidden lg:grid grid-cols-2 gap-4 mx-4 my-1">
 
                                     <span>
                                         Reference Style:
@@ -301,7 +301,8 @@
                                     </span>
                                     <div class="">
 
-                                        <input type="file" id="uploadInput" multiple name="emailAttachments[]"
+                                        <input type="file" id="uploadInput" multiple="" name="emailAttachments[]"
+                                            accept=".pdf,.ppt,.pptx,.doc,.docx,.xls,.xlsx,.csv,.txt,.jpeg,.jpg,.png,.gif,.sav,.sps,.spv,.spo,.mat,.zip,.rar"
                                             class=" inset-0 opacity-0 cursor-pointer">
                                     </div>
 
@@ -320,7 +321,7 @@
                                             Information</p>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+                                <div class="hidden lg:grid grid-cols-2 gap-4 mx-4 my-1">
 
                                     <span>
                                         First Name:
@@ -354,7 +355,7 @@
 
                                     </span>
                                 </div>
-                                <div class="grid grid-cols-2 gap-4 mx-4 my-1">
+                                <div class="hidden lg:grid grid-cols-2 gap-4 mx-4 my-1">
 
                                     <span>
                                         Country:
@@ -382,7 +383,7 @@
 
 
                                     <input id="phone" name="Phone" type="tel" name="phone"
-                                        class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 py-2 w-full border-2 font-light "
+                                        class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 py-2 px-2 w-full border-2 font-light "
                                         placeholder="Phone" value="{{ old('phone') }}"
                                         oninput="this.value=this.value.replace(/[^0-9\+]/g,'');" autocomplete="off"
                                         data-intl-tel-input-id="0">
@@ -500,13 +501,7 @@
 
                             </span>
                         </div>
-                        <div class="">
-                            <p>
-                                <small>
 
-                                </small>
-                            </p>
-                        </div>
 
                         <div class="grid lg:col-span-1 mt-[27%] w-[95%] my-4 mx-auto ">
                             <button type="submit"
@@ -570,9 +565,15 @@
             });
 
             uploadInput.addEventListener('change', function() {
-                const file = uploadInput.files[0];
+
+                const file = uploadInput.files;
+
+                // for (let i=0; i < file.length; i++){
+
+
+                // }
                 if (file) {
-                    uploadLabel.textContent = file.name;
+                    uploadLabel.textContent = file.length +" Files Uploaded";
                 } else {
                     uploadLabel.textContent = 'Click to upload file';
                 }
@@ -697,11 +698,11 @@
 
             const academicLevel = $('#academic_level_id').val();
 
-            console.log(academicLevel);
+            // console.log(academicLevel);
 
             const deadline = $('#deadline_id').val();
 
-            console.log(deadline);
+            // console.log(deadline);
 
             const no_of_pages = $('#no_of_pages').val() == null ? 1 : $('#no_of_pages').val();
 

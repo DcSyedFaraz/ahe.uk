@@ -45,13 +45,7 @@
                                                         <span class="badge badge-warning">Not Verified</span>
                                                     @endif
                                                 </td>
-                                                <td>
-                                                    {{-- @can('') --}}
-                                                        <a class="btn btn-xs btn-info" href="{{ route('admin.customers.show', $customer->id) }}">
-                                                            <i class="fa fa-eye"></i>
-                                                        </a>
-                                                    {{-- @endcan --}}
-                                                </td>
+                                                
                                             </tr>
                                         @endforeach
                                     @endif

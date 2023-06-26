@@ -19,7 +19,7 @@
                     </div>
                     <!-------------------------- Add class md:hidden inside button to hide on main desktops---------------------->
                     <button data-collapse-toggle="mobile-menu-3" type="button"
-                        class="md:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+                        class="xl:hidden text-gray-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
                         aria-controls="mobile-menu-3" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -36,23 +36,22 @@
                     </button>
                 </div>
 
-                <div class="hidden md:flex justify-between items-center w-full md:w-auto md:order-1" id="mobile-menu-3">
-                    <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-                        <li class="lg:flex">
-                            <img class="hidden lg:flex animate-bounce" src="{{ asset('images/nav iconelectric.png') }}"
+                <div class="hidden xl:flex justify-between items-center w-full md:w-auto md:order-1" id="mobile-menu-3">
+                    <ul class="flex-col xl:flex-row flex xl:space-x-8 mt-4 xl:mt-0 xl:text-sm xl:font-medium">
+                        <li class="xl:flex">
+                            <img class="hidden xl:flex animate-bounce" src="{{ asset('images/nav iconelectric.png') }}"
                                 alt="">
                             <a href="{{ route('blog') }}"
-                                class="ext-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0">Blog</a>
+                                class="nav-text">Blog</a>
 
 
 
                         </li>
-
-                        <li class="lg:flex">
-                            <img class="hidden lg:flex animate-bounce h-[43px] w-[47px]"
+                        <li class="xl:flex">
+                            <img class="hidden xl:flex animate-bounce h-[43px] w-[47px]"
                                 src="{{ asset('images/Group44.png') }}" alt="">
                             <a href="{{ route('about') }}"
-                                class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
+                                class="nav-text"
                                 aria-current="page">
                                 <span class=" inline-flex whitespace-nowrap">
                                     About Us
@@ -62,11 +61,9 @@
 
 
                         </li>
-                        {{-- @dd($services); --}}
-
-                        <li class="lg:flex">
+                        <li class="xl:flex">
                             <div>
-                                <img class="hidden lg:flex animate-bounce"
+                                <img class="hidden xl:flex animate-bounce "
                                     src="{{ asset('images/nav icon 2percent.png') }}" alt="">
                             </div>
                             <div @click.away="open = false" class="relative whitespace-nowrap inline-flex"
@@ -74,7 +71,7 @@
                                 <a @click="open = !open"
                                     class="block w-full text-left font-semibold cursor-pointer hover:text-[#6ec1e4] {{ request()->routeIs('service.show') ? '  text-primary-one' : '' }}">
                                     <span
-                                        class="  text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-white md:p-0">
+                                        class="nav-text">
                                         <span class="text-">
 
                                             Services
@@ -111,36 +108,36 @@
                                 </div>
                             </div>
                             {{-- <a href="asa"
-                            class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-2 py-2 md:hover:text-white md:p-0"
+                            class="text-base font-bold xl:text-lg lg:text-md text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-2 py-2 md:hover:text-white md:p-0"
                             aria-current="page">
                             Services </a> --}}
                         </li>
-                        <li class="lg:flex">
+                        <li class="xl:flex">
                             <div>
-                                <img class="hidden lg:flex animate-bounce"
+                                <img class="hidden xl:flex animate-bounce"
                                     src="{{ asset('images/Group 44track.png') }}" alt="">
                             </div>
 
                             <a href="{{ route('contact') }}"
-                                class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
+                                class="nav-text"
                                 aria-current="page">
                                 Contact Us</a>
                         </li>
-                        <li class="lg:flex">
+                        <li class="xl:flex">
                             <div>
-                                <img class="hidden lg:flex animate-bounce"
+                                <img class="hidden xl:flex animate-bounce"
                                     src="{{ asset('images/Rectanglecart.png') }}" alt="">
                             </div>
 
                             <a href="{{ route('order') }}"
-                                class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
+                                class="nav-text"
                                 aria-current="page">Order
                                 Now</a>
                         </li>
-                        <li class="lg:flex">
+                        <li class="xl:flex">
                             <div>
                                 {{-- <i class="fa-thin fa-right-to-bracket" style="color: #000000;"></i> --}}
-                                <img class="hidden lg:flex animate-bounce w-[2.5rem]"
+                                <img class="hidden xl:flex animate-bounce lg:w-[4.5rem] xl:w-[2.5rem]"
                                     src="{{ asset('images/user.svg') }}" alt="">
                             </div>
                             @if (Auth::user())
@@ -152,11 +149,11 @@
                             href="{{ route('login') }}"
                             @endif --}}
                                 <a href="{{ route('login') }}"
-                                    class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
+                                    class="nav-text"
                                     aria-current="page">Welcome, {{ Auth::user()->name }}</a>
                                     @else
                                     <a href="{{ route('login') }}"
-                                    class="text-base font-bold lg:text-lg text-gray-900 hover:bg-gray-50 border-b border-gray-100 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white md:p-0"
+                                    class="nav-text"
                                     aria-current="page">Login/Register</a>
                                     @endif
 

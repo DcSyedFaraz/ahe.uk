@@ -19,14 +19,14 @@
         <div class="lg:mx-12 pb-4">
             <div class="container mx-auto px-4 pb-4">
                 @if (session('userData'))
-                    <div class="md:w-1/2 my-4 mx-auto bg-blue-100 border-t-4 border-blue-500 rounded-b text-teal-900 px-4 py-3 shadow-md"
+                    <div class="md:w-1/2 my-4 mx-auto  border-t-4 bg-white border-primary-one rounded-b text-primary-one px-4 py-3 shadow-md"
                         role="alert">
                         <div class="flex">
                             <div class="py-1">
                                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                     viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                                    <circle style="fill:#25AE88;" cx="25" cy="25" r="25" />
+                                    <circle style="fill:#FFC04C;" cx="25" cy="25" r="25" />
                                     <polyline
                                         style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
                                         points="

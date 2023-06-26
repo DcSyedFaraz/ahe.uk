@@ -15,7 +15,7 @@
                         <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                             <img src="{{ asset('images/payments/icon1.png') }}" class="h-20 mx-auto">
                             <p class="text-lg font-semibold">Affordable Rates</p>
-                            <p>Cheap Resume Writer offers excellent services in cheap prices without compromising on quality.</p>
+                            <p>Assignment Help Expert Writer offers excellent services in cheap prices without compromising on quality.</p>
                         </div>
                         <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                             <img src="{{ asset('images/payments/icon2.png') }}" class="h-20 mx-auto">
@@ -25,12 +25,12 @@
                         <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                             <img src="{{ asset('images/payments/icon3.png') }}" class="h-20 mx-auto">
                             <p class="text-lg font-semibold">Tailored Templates</p>
-                            <p>Clean and industry specific templates to make Resume presentable and eye catching for employers.</p>
+                            <p>Clean and industry specific templates to make Assignment presentable and eye catching for employers.</p>
                         </div>
                         <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                             <img src="{{ asset('images/payments/icon4.png') }}" class="h-20 mx-auto">
                             <p class="text-lg font-semibold">ATS Friendly</p>
-                            <p>ATS (Applicant Tracking System) friendly Resume to make sure it gets the maximum reach.</p>
+                            <p>ATS (Applicant Tracking System) friendly Assignment to make sure it gets the maximum reach.</p>
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat hover:shadow-md">
                         {{ trans('global.login') }}
                     </button>
 
@@ -98,7 +98,7 @@
                     </p>
 
                     <div class="flex w-full space-x-1 mx-auto justify-center">
-                        <a href="{{ route('register') }}" class="py-3 w-1/2 border-primary-one border-2  rounded-lg flex justify-center items-center space-x-2">
+                        <a href="{{ route('register') }}" class=" hover:shadow-lg py-3 w-1/2 border-primary-one border-2  rounded-lg flex justify-center items-center space-x-2">
                             <img src="{{ asset('images/sign-up.png') }}" alt="google" width="20" height="20">
                             <span>
                                 Register
@@ -113,7 +113,7 @@
                     </div>
                 </form>
                 @if (Route::has('password.request'))
-                    <a class="mt-1  float-right" href="{{ route('password.request') }}">
+                    <a class="mt-1  float-right hover:underline-offset-7 hover:underline" href="{{ route('password.request') }}">
                         {{ trans('global.forgot_password') }}
                     </a>
                 @endif

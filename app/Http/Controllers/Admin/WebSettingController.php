@@ -74,13 +74,14 @@ class WebSettingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $setting = WebSetting::firstorfail($id);
+        // dd($id);
+        $setting = WebSetting::findorfail($id);
         $request->is_index ==   "on" ? $request->merge(['is_index'=> true]) : $request->merge(['is_index' => false]);
         $request->is_blogs_offers == "on" ? $request->merge(['is_blogs_offers'=> true]) : $request->merge(['is_blogs_offers'=> false]);
         $request->is_services_offers == "on" ? $request->merge(['is_services_offers'=> true]) : $request->merge(['is_services_offers'=> false]);
 
         $setting->update($request->all());
-        return redirect()->route('admin.web-setting.index');
+        return redirect()->route('admin.setting.index');
 
 
 

@@ -82,7 +82,7 @@ class RegisterController extends Controller
             //customer
             $user->roles()->sync(2);
 
-            Mail::to($data['email'])->send(new UserCreateMail($user, $password));
+           //Mail:::to($data['email'])->send(new UserCreateMail($user, $password));
 
             return $user;
     }

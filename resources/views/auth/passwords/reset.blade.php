@@ -9,7 +9,7 @@
                     <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                         <img src="{{ asset('images/payments/icon1.png') }}" class="h-20 mx-auto">
                         <p class="text-lg font-semibold">Affordable Rates</p>
-                        <p>Cheap Resume Writer  offers excellent services in cheap prices without compromising on quality.</p>
+                        <p>Assignment Help Expert Writer  offers excellent services in cheap prices without compromising on quality.</p>
                     </div>
                     <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                         <img src="{{ asset('images/payments/icon2.png') }}" class="h-20 mx-auto">
@@ -19,12 +19,12 @@
                     <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                         <img src="{{ asset('images/payments/icon3.png') }}" class="h-20 mx-auto">
                         <p class="text-lg font-semibold">Tailored Templates</p>
-                        <p>Clean and industry specific templates to make Resume presentable and eye catching for employers.</p>
+                        <p>Clean and industry specific templates to make Assignment presentable and eye catching for employers.</p>
                     </div>
                     <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                         <img src="{{ asset('images/payments/icon4.png') }}" class="h-20 mx-auto">
                         <p class="text-lg font-semibold">ATS Friendly</p>
-                        <p>ATS (Applicant Tracking System) friendly Resume to make sure it gets the maximum reach.</p>
+                        <p>ATS (Applicant Tracking System) friendly Assignment to make sure it gets the maximum reach.</p>
                     </div>
                 </div>
             </div>

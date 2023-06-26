@@ -78,6 +78,7 @@ class OrdersController extends Controller
     public function show($id)
     {
         $order = Order::findOrFail($id);
+        // dd($order);
         $files= $order->files;
         return view('customer.orders.show', compact('order','files'));
     }

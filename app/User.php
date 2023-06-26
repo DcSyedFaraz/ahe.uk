@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class User extends Authenticatable
 {
@@ -79,13 +80,13 @@ class User extends Authenticatable
         //     $this->email
         // ];
 
-        // Mail::send('email.reset-password', [
-        //     'fullname'      => $this->fullname,
-        //     'reset_url'     => route('user.password.reset', ['token' => $token, 'email' => $this->email]),
-        // ], function($message) use($data){
-        //     $message->subject('Reset Password Request');
-        //     $message->to($data[0]);
-        // });
+        // // Mail:::send('email.reset-password', [
+        //      'fullname'      => $this->fullname,
+        //      'reset_url'     => route('user.password.reset', ['token' => $token, 'email' => $this->email]),
+        //  ], function($message) use($data){
+        //      $message->subject('Reset Password Request');
+        //      $message->to($data[0]);
+        //  });
     }
 
     public function roles()
