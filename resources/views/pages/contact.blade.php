@@ -39,7 +39,7 @@
 
                             <div class="">
                               <label class="text-md text-gray-600 font-bold">Phone</label>
-                                <input type="tel" name="Phone" id="phone" class="contact-input" placeholder=" Enter Phone Number" value="{{ old('phone') }}"
+                                <input type="tel" name="Phone" id="phone" class="contact-input" style="margin-top: 0.75rem !important;margin-bottom: 0.75rem !important;" placeholder=" Enter Phone Number" value="{{ old('phone') }}"
                                 oninput="this.value=this.value.replace(/[^0-9\+]/g,'');" autocomplete="off" data-intl-tel-input-id="0">
                                 <input  type="hidden" name="phone" id="phone2" />
                             </div>

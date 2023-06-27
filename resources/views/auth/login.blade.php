@@ -44,7 +44,7 @@
                         </p>
                     </div>
                     @if (session('success') )
-                        <div class="mt-3 bg-primary-one border-t-4 border-primary-one rounded text-teal-900 shadow-md" role="alert">
+                        <div class="mt-3 bg-primary-one border-t-4 border-green-700 rounded text-white shadow-md" role="alert">
                             <div class="py-2">
                                 <p class="text-center  font-bold">{{ session('success') }}</p>
                             </div>

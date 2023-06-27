@@ -605,6 +605,10 @@ video {
   bottom: 0px;
 }
 
+.bottom-\[-3\.5rem\] {
+  bottom: -3.5rem;
+}
+
 .left-0 {
   left: 0px;
 }
@@ -625,6 +629,10 @@ video {
   right: 0px;
 }
 
+.top-\[-4\.75rem\] {
+  top: -4.75rem;
+}
+
 .top-\[15\.5\%\] {
   top: 15.5%;
 }
@@ -639,30 +647,6 @@ video {
 
 .top-\[42rem\] {
   top: 42rem;
-}
-
-.top-1 {
-  top: 0.25rem;
-}
-
-.top-\[\] {
-  top: ;
-}
-
-.top-\[-4\.75rem\] {
-  top: -4.75rem;
-}
-
-.bottom-2 {
-  bottom: 0.5rem;
-}
-
-.bottom-\[-\] {
-  bottom: -;
-}
-
-.bottom-\[-3\.5rem\] {
-  bottom: -3.5rem;
 }
 
 .z-10 {
@@ -727,10 +711,6 @@ video {
 
 .m-3 {
   margin: 0.75rem;
-}
-
-.m-5 {
-  margin: 1.25rem;
 }
 
 .m-6 {
@@ -1058,10 +1038,6 @@ video {
 
 .h-\[100\%\] {
   height: 100%;
-}
-
-.h-\[110\%\] {
-  height: 110%;
 }
 
 .h-\[17rem\] {
@@ -1698,6 +1674,11 @@ video {
   border-color: rgb(74 222 128 / var(--tw-border-opacity));
 }
 
+.border-green-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(21 128 61 / var(--tw-border-opacity));
+}
+
 .border-orange-500 {
   --tw-border-opacity: 1;
   border-color: rgb(249 115 22 / var(--tw-border-opacity));
@@ -2073,26 +2054,6 @@ video {
 .py-9 {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.py-14 {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
-.py-\[\] {
-  padding-top: ;
-  padding-bottom: ;
-}
-
-.py-\[3rem\] {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
 }
 
 .pb-2 {
@@ -3006,18 +2967,6 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
-.hover\:delay-100:hover {
-  transition-delay: 100ms;
-}
-
-.hover\:delay-500:hover {
-  transition-delay: 500ms;
-}
-
-.hover\:delay-200:hover {
-  transition-delay: 200ms;
-}
-
 .focus\:border-blue-500:focus {
   --tw-border-opacity: 1;
   border-color: rgb(59 130 246 / var(--tw-border-opacity));
@@ -3200,14 +3149,6 @@ video {
     left: 35%;
   }
 
-  .md\:top-4 {
-    top: 1rem;
-  }
-
-  .md\:top-1 {
-    top: 0.25rem;
-  }
-
   .md\:order-1 {
     order: 1;
   }
@@ -3330,26 +3271,6 @@ video {
     padding-right: 4rem;
   }
 
-  .md\:py-\[\] {
-    padding-top: ;
-    padding-bottom: ;
-  }
-
-  .md\:py-\[3\.5r\] {
-    padding-top: 3.5r;
-    padding-bottom: 3.5r;
-  }
-
-  .md\:py-\[3\.5rem\] {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-
-  .md\:px-5 {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-
   .md\:hover\:bg-transparent:hover {
     background-color: transparent;
   }
@@ -3363,38 +3284,6 @@ video {
 @media (min-width: 1024px) {
   .lg\:visible {
     visibility: visible;
-  }
-
-  .lg\:left-3 {
-    left: 0.75rem;
-  }
-
-  .lg\:left-2 {
-    left: 0.5rem;
-  }
-
-  .lg\:left-1 {
-    left: 0.25rem;
-  }
-
-  .lg\:left-\[\] {
-    left: ;
-  }
-
-  .lg\:left-\[6\.25rem\] {
-    left: 6.25rem;
-  }
-
-  .lg\:left-\[10\%\] {
-    left: 10%;
-  }
-
-  .lg\:left-\[6\%\] {
-    left: 6%;
-  }
-
-  .lg\:top-0 {
-    top: 0px;
   }
 
   .lg\:top-\[-20px\] {
@@ -3441,16 +3330,8 @@ video {
     margin-top: -32%;
   }
 
-  .lg\:ml-\[6\%\] {
-    margin-left: 6%;
-  }
-
   .lg\:mt-32 {
     margin-top: 8rem;
-  }
-
-  .lg\:block {
-    display: block;
   }
 
   .lg\:grid {
@@ -3595,11 +3476,6 @@ video {
     padding-bottom: 1.25rem;
   }
 
-  .lg\:py-14 {
-    padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
-  }
-
   .lg\:py-\[3\.5rem\] {
     padding-top: 3.5rem;
     padding-bottom: 3.5rem;
@@ -3625,16 +3501,12 @@ video {
     left: 23%;
   }
 
-  .xl\:left-\[57\%\] {
-    left: 57%;
-  }
-
-  .xl\:left-\[6\%\] {
-    left: 6%;
-  }
-
   .xl\:left-\[5\%\] {
     left: 5%;
+  }
+
+  .xl\:left-\[57\%\] {
+    left: 57%;
   }
 
   .xl\:col-span-1 {
@@ -3645,16 +3517,12 @@ video {
     grid-column: span 9 / span 9;
   }
 
-  .xl\:-mt-\[28\%\] {
-    margin-top: -28%;
+  .xl\:-mt-\[29\%\] {
+    margin-top: -29%;
   }
 
   .xl\:mt-0 {
     margin-top: 0px;
-  }
-
-  .xl\:-mt-\[29\%\] {
-    margin-top: -29%;
   }
 
   .xl\:block {
@@ -3693,6 +3561,10 @@ video {
     width: 70%;
   }
 
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -3703,10 +3575,6 @@ video {
 
   .xl\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-
-  .xl\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .xl\:flex-row {
@@ -3757,10 +3625,6 @@ video {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:-mt-\[28\] {
-    margin-top: -28;
-  }
-
   .\32xl\:-mt-\[28\%\] {
     margin-top: -28%;
   }
