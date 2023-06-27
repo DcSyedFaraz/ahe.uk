@@ -49,7 +49,7 @@
                         </li>
                         <li class="xl:flex">
                             <img class="hidden xl:flex animate-bounce h-[43px] w-[47px]"
-                                src="{{ asset('images/Group44.png') }}" alt="">
+                                src="{{ asset('images/Group44.svg') }}" alt="">
                             <a href="{{ route('about') }}"
                                 class="nav-text"
                                 aria-current="page">
@@ -126,13 +126,12 @@
                         <li class="xl:flex">
                             <div>
                                 <img class="hidden xl:flex animate-bounce"
-                                    src="{{ asset('images/Rectanglecart.png') }}" alt="">
+                                    src="{{ asset('images/Rectangle.svg') }}" alt="">
                             </div>
 
                             <a href="{{ route('order') }}"
                                 class="nav-text"
-                                aria-current="page">Order
-                                Now</a>
+                                aria-current="page">OrderNow</a>
                         </li>
                         <li class="xl:flex">
                             <div>

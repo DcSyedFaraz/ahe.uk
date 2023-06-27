@@ -44,8 +44,6 @@
                                                         <br>
                                                         <strong>Word Count :  {{$query->wcount}}</strong>
                                                         <br>
-                                                        <strong>Country :  {{$query->country}}</strong>
-                                                        <br>
                                                         <br>Thank you for choosing {{ config('app.app_name') }},
                                                         <br>
                                                         <br>Team <strong>{{ config('app.app_name') }}</strong>

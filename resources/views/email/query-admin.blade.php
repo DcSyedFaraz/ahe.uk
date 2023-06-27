@@ -38,13 +38,11 @@
                                                         <br>
                                                         <strong>Subject :  {{$query->subject}}</strong>
                                                         <br>
-                                                        <strong>Deadline :  {{$query->deadline}}</strong>
+                                                        <strong>Deadline :  {{$query->deadlineName->name}}</strong>
                                                         <br>
                                                         <strong>University :  {{$query->university}}</strong>
                                                         <br>
                                                         <strong>Word Count :  {{$query->wcount}}</strong>
-                                                        <br>
-                                                        <strong>Country :  {{$query->country}}</strong>
                                                         <br>
                                                         <br>Thank you for choosing {{ config('app.app_name') }},
                                                         <br>

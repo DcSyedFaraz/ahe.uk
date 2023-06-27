@@ -16,7 +16,7 @@
     {{-- Chrome Address Bar Color --}}
     <meta name="theme-color" content="#fff" />
 
-    <title>@yield('title', env('APP_NAME'))</title>
+    <title>@yield('title', config('app.name'))</title>
     <meta name="description" content="@yield('description')" />
 
     {{-- Facebook share --}}
@@ -37,7 +37,7 @@
     {{-- CUSTOM CSS --}}
     <link rel="stylesheet" href="{{ asset('css/frontend-customcss.css') }}">
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon.ico') }}">
     {{-- swiper cdn --}}
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     {{-- AOS CSS CDN --}}
@@ -54,7 +54,7 @@
     <style>
         .iti {
             width: 100%;
-            margin-top:11px;
+            /* margin-top:11px; */
         }
     </style>
 

@@ -1,4 +1,7 @@
 @extends('layouts.web')
+@section('title','The Best & Assignment Help Expert Writing Services of 2022')
+@section('description','Assignment Help Expert Writer Offers Best Resume Writing Help to all Over USA, You Can Take Guidance From Certified Resume Writers at Low Price')
+@section('canonical', config('app.url'))
 
 @section('styles')
     <style>
@@ -42,7 +45,7 @@
 
 
     <!-------------------University Logo  ------------------------->
-    <section class="overflow-hidden h-[5rem] my-4">
+    <section class="overflow-hidden h-[5`rem] my-4">
         <div class="container mx-auto">
             <div class="hidden lg:grid lg:grid-cols-6">
                 <!-- Img 1 -->
@@ -88,11 +91,11 @@
 
         <h3 class="font-bold text-4xl text-center mt-5 py-9 mx-2 md:mx-0"> How to Order An Assignment</h3>
         <div class="relative">
-            <div class="hidden lg:block">
+            <div class="hidden xl:block">
 
                 <img src="{{ asset('images/Group.webp') }}" class="lg:w-[90%] mx-auto" alt="">
             </div>
-            <div class="hidden lg:grid lg:ml-[6%] grid-cols-3 x absolute lg:-mt-[32%] xl:-mt-[28%] w-full lg:w-[93%] ">
+            <div class="hidden xl:grid xl:left-[5%] 2xl:-mt-[28%] grid-cols-3 x absolute lg:-mt-[32%] xl:-mt-[29%] w-full lg:w-[93%] ">
                 <div class=" rounded-full   p-5">
                     <div class="p-8  rounded-full bg-gradient-to-r from-[#FCA311] to-[#F68800] w-[21rem] h-[21rem]">
                         <div class="bg-white   rounded-full w-[17rem] h-[17rem]">
@@ -139,7 +142,7 @@
     </div>
 
     <!-- Mobile  -->
-    <div class="lg:hidden grid gird-cols-1 place-items-center gap-y-20 relative">
+    <div class="xl:hidden grid gird-cols-1 place-items-center gap-y-20 relative">
 
 
         <div class="outline-dashed outline-orange-500 rounded-full w-74 h-74 p-5">
@@ -284,10 +287,12 @@
                 </div>
                 <!-- Button  -->
                 <div class="mt-20">
+                    <a href="{{ route('order') }}">
                     <button
                         class="shadow-2xl hover:-translate-y-1 hover:scale-100 cursor-pointer bg-orange-500  text-white font-bold py-2 px-10 rounded-full">
-                        <a href="#"></a> Order Now!
-                    </button>
+                            Order Now!
+                        </button>
+                    </a>
                 </div>
             </div>
 
@@ -306,7 +311,7 @@
             <div class="grid lg:grid-cols-3 px-6 md:px-12 xl:px-32">
 
                 <!------------------ Box 1 ------------------>
-                <div class="p-0 py-12 ">
+                <div class="hover:scale-105 p-0 py-12 ">
                     <div class="block rounded-lg shadow-lg bg-white h-full lg:rounded-tr-none lg:rounded-br-none">
                         <div class="p-6  text-center">
                             <h4 class="uppercase mb-4 text-xl">
@@ -342,10 +347,12 @@
                                 </li>
                                 <li class="mb-4  items-center">
 
+                                    <a href="{{ route('order') }}">
                                     <button
                                         class="border border-orange-500  bg-transparent hover:bg-orange-500 text-orange-500 hover:text-white font-light py-2 px-10 rounded-full">
-                                        <a href="#"></a> Order Now!
-                                    </button>
+                                            Order Now!
+                                        </button>
+                                    </a>
                                 </li>
                             </ol>
                         </div>
@@ -354,7 +361,7 @@
 
                 <!-------------------Box 2--------------------->
                 <div class="p-0">
-                    <div class=" block shadow-2xl rounded-lg  bg-white h-full z-10">
+                    <div class="hover:scale-105 block shadow-2xl rounded-lg  bg-white h-full z-10">
 
                         <div class="p-6 bg-orange-500 rounded text-center">
                             <h4 class="text-white uppercase my-4 text-xl">
@@ -394,17 +401,19 @@
                                 </li>
                                 <li class="mb-4  items-center">
 
+                                    <a href="{{ route('order') }}">
                                     <button
                                         class="border border-orange-500  bg-transparent hover:bg-orange-500 text-orange-500 hover:text-white font-light py-2 px-10 rounded-full">
-                                        <a href="#"></a> Order Now!
-                                    </button>
+                                            Order Now!
+                                        </button>
+                                    </a>
                                 </li>
                             </ol>
                         </div>
                     </div>
                 </div>
                 <!-------------------Box 3------------------- -->
-                <div class="p-0 py-12">
+                <div class="hover:scale-105 p-0 py-12">
                     <div class="block rounded-lg shadow-lg bg-white h-full lg:rounded-tl-none lg:rounded-bl-none">
                         <div class="p-6  text-center">
                             <h4 class="uppercase mb-4 text-xl">
@@ -440,10 +449,12 @@
                                 </li>
                                 <li class="mb-4  items-center">
 
+                                    <a href="{{ route('order') }}">
                                     <button
                                         class="border border-orange-500  bg-transparent hover:bg-orange-500 text-orange-500 hover:text-white font-light py-2 px-10 rounded-full">
-                                        <a href="#"></a> Order Now!
-                                    </button>
+                                            Order Now!
+                                        </button>
+                                    </a>
                                 </li>
                             </ol>
                         </div>
@@ -533,10 +544,12 @@
                 Get All the Features <span class="line-cut">£79.81</span> Free
             </h4>
             <div class="mt-10 text-center">
-                <button
+                <a href="{{ route('order') }}">
+                    <button
                     class="hover:-translate-y-1 hover:scale-100 shadow-2xl bg-orange-500 text-white font-bold py-2 px-10 rounded-full">
-                    <a href="#"></a> Order Now!
-                </button>
+                    Order Now!
+                    </button>
+                </a>
             </div>
         </div>
     </section>
@@ -725,8 +738,8 @@
                     </div>
                 </div>
                 <!-- column 2 for Large Screens-->
-                <div class="hover:scale-105 hidden sm:hidden md:hidden lg:grid ">
-                    <img src="images/student-education1.webp" class="h-[110%]" alt="">
+                <div class="hover:scale-105 hidden relative lg:grid ">
+                    <img src="images/student-education1.webp.png" class="absolute bottom-[-3.5rem]" alt="">
                 </div>
 
             </div>
@@ -755,7 +768,7 @@
                 class="grid grid-cols-1 gap-2 lg:gap-3 sm:grid-cols-1 md:grid-cols-1  lg:grid-cols-3 mt-8 lg:space-x-4 space-y-2">
                 <!-- Column 1 for testimonial -->
                 <div class="grid-cols-1 mt-2 ">
-                    <div class="outline outline-[#F78C03] rounded-3xl p-5 bg-white">
+                    <div class="outline outline-[#F78C03] rounded-3xl p-5 lg:p-5 lg:py-[3.5rem] xl:p-5 bg-white">
                         <div class="container py-5">
                             <!-- This Grid is for text -->
                             <div class="grid grid-cols-6">
@@ -944,7 +957,7 @@
 
                 <!-- Column 2 for accomplishment -->
                 <div class=" col-span-2 pb-8">
-                    <div class="outline outline-[#F78C03] rounded-3xl p-5 bg-white">
+                    <div class="outline outline-[#F78C03] rounded-3xl p-5 xl:py-14 2xl:p-5 bg-white">
                         <div class="container">
                             <h4 class="text-2xl font-semibold">
                                 Our Accomplishments Today
@@ -1108,10 +1121,10 @@
                             </div>
 
                             <!-- Our Happy Customer -->
-                            <div class="grid grid-cols-2 gap-1 mt-4">
+                            <div class="grid grid-cols-1 xl:grid-cols-2 gap-1 mt-4">
                                 <div class="flex">
-                                    <div class="m-5">
-                                        <div class="rounded-lg p-4 py-5 bg-[#FDC875] absolute overflow-hidden">
+                                    <div class="lg:m-5 m-[4.25rem] relative">
+                                        <div class="rounded-lg p-4 bg-[#FDC875] absolute overflow-hidden top-[-4.75rem] lg:top-[-20px]">
                                             <h6 class="font-extrabold text-white text-sm ">
                                                 Our Happy Bar
                                             </h6>
@@ -1203,7 +1216,7 @@
 
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="text-[#FAAC08] font-extrabold text-xl"> Q1. Which is the best
+                                <span class="text-[#FAAC08] font-extrabold text-xl p-4"> Q1. Which is the best
                                     assignment help
                                     website in UK?</span>
                                 <span class="transition group-open:rotate-180">
@@ -1215,7 +1228,7 @@
                                 </span>
                             </summary>
 
-                            <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                            <p class="text-neutral-600 mt-3 group-open:animate-fadeIn p-5">
                                 Assignmenthelpexpert.co.uk is the best assignment help website in the UK. We provide
                                 high-quality, plagiarism-free
                                 assignments to students at all levels of education. Our team of expert writers has

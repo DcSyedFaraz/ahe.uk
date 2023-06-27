@@ -57,6 +57,7 @@ return [
     'app_name' => 'Assignment Help Expert',
 
     'asset_url' => env('ASSET_URL', null),
+    'mail_address' => env('MAIL_FROM_ADDRESS'),
 
     /*
     |--------------------------------------------------------------------------

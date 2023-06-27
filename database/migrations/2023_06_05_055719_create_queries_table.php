@@ -20,7 +20,6 @@ class CreateQueriesTable extends Migration
             $table->string('subject');
             $table->string('deadline');
             $table->integer('wcount');
-            $table->string('country');
             $table->string('phone');
             $table->string('university');
             $table->timestamps();

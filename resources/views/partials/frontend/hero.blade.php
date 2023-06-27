@@ -94,15 +94,8 @@
 
             <form method="POST" id="contact-form" action="{{ route('form.submit') }}">
                 @csrf
+<div id="msg-bag"></div>
 
-                @if (session('success'))
-                    <div class="my-4 mx-auto bg-primari-one-lite border-t-4 border-primary-one rounded-b text-sm text-teal-900 px-4 py-3 shadow-md"
-                        role="alert">
-
-                        <p class="text-center font-bold">{{ session('success') }}</p>
-
-                    </div>
-                @endif
                 <div class="grid grid-cols-1 sm:grid-cols-6 gap-4">
                     <div class="col-span-2">
                         <h2 class="text-lg font-bold font-inter">ORDER NOW</h2>
@@ -168,8 +161,8 @@
                 </div>
 
                 <!-- Country Code Number University -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                    <div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {{-- <div>
                         <select id="small" name="country" class="form-select">
                             <option selected>Choose a country</option>
                             <option value="US">United States</option>
@@ -177,10 +170,10 @@
                             <option value="FR">France</option>
                             <option value="DE">Germany</option>
                         </select>
-                    </div>
+                    </div> --}}
 
                     <div class="relative mb-6" data-te-input-wrapper-init>
-                        <input type="tel" class="form-input" id="exampleInput124" name="phone"
+                        <input type="tel" class="form-input" id="phone" name="phone"
                             aria-describedby="emailHelp124" placeholder="Phone Number">
                         <label for="exampleInput124" class="form-lebel"></label>
                     </div>
@@ -194,7 +187,7 @@
                     </div>
                 </div>
 
-                <button type="submit"  id="btn-submit"
+                <button type="submit" id="btn-submit"
                     class="transition ease-in-out delay-150 w-full rounded-bl-lg rounded-tr-lg bg-[#276967] px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none hover:-translate-y-1 hover:scale-110 active:bg-primary-800 active:shadow-lg"
                     data-te-ripple-init data-te-ripple-color="light">
                     Let's Start
@@ -209,22 +202,30 @@
 
 <script>
     //Slider of no of words
-        const
-            range = document.getElementById('range'),
-            rangeV = document.getElementById('rangeV'),
-            setValue = () => {
-                const
-                    newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
-                    newPosition = 10 - (newValue * 0.2);
-                rangeV.innerHTML = `<span>${range.value}</span>`;
-                rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
-            };
-        document.addEventListener("DOMContentLoaded", setValue);
-        range.addEventListener('input', setValue);
-//ajax for form...
-$(document).ready(function() {
+    const
+        range = document.getElementById('range'),
+        rangeV = document.getElementById('rangeV'),
+        setValue = () => {
+            const
+                newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
+                newPosition = 10 - (newValue * 0.2);
+            rangeV.innerHTML = `<span>${range.value}</span>`;
+            rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
+        };
+    document.addEventListener("DOMContentLoaded", setValue);
+    range.addEventListener('input', setValue);
+</script>
+@section('scripts')
+    <script>
+        //ajax for form...
 
+        $(document).ready(function() {
 
+            const phoneInputField = document.querySelector("#phone");
+             const phoneInput = window.intlTelInput(phoneInputField, {
+                 preferredCountries: ["gb"],
+                 utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+             });
 
 
 
@@ -232,7 +233,7 @@ $(document).ready(function() {
                 e.preventDefault();
 
                 const phoneNumber = phoneInput.getNumber();
-                var number =  $('#phone').val(phoneNumber);
+                var number = $('#phone').val(phoneNumber);
 
                 // console.log(number);
 
@@ -298,4 +299,5 @@ $(document).ready(function() {
                 });
             });
         });
-</script>
+    </script>
+@endsection

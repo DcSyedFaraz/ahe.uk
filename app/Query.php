@@ -12,7 +12,6 @@ class Query extends Model
         'subject',
         'deadline',
         'wcount',
-        'country',
         'phone',
         'university',
     ];
