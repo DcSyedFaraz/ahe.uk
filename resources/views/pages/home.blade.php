@@ -1216,9 +1216,8 @@
 
                         <details class="group">
                             <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                                <span class="text-[#FAAC08] font-extrabold text-xl p-4"> Q1. Which is the best
-                                    assignment help
-                                    website in UK?</span>
+                                <span class="text-[#FAAC08] font-extrabold text-xl"> What is a SAAS
+                                    platform?</span>
                                 <span class="transition group-open:rotate-180">
                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -1228,14 +1227,9 @@
                                 </span>
                             </summary>
 
-                            <p class="text-neutral-600 mt-3 group-open:animate-fadeIn p-5">
-                                Assignmenthelpexpert.co.uk is the best assignment help website in the UK. We provide
-                                high-quality, plagiarism-free
-                                assignments to students at all levels of education. Our team of expert writers has
-                                extensive experience in writing
-                                assignments in a wide range of subjects, so we can help you with any task you need
-                                assistance with. Contact us
-                                today to get started!
+                            <p class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                                SAAS platform is a cloud-based software service that allows users to access
+                                and use a variety of tools and functionality.
                             </p>
 
                         </details>

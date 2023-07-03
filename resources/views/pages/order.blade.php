@@ -10,12 +10,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .iti {
+            margin-top:11px;
+
+        }
     </style>
 
     <section class="container mx-auto w-[80%]">
         <div class="grid grid-col-3 sm:grid-cols-3 my-4 gap-x-4 gap-y-4  ">
             <div class="lg:col-span-2 md:col-span-3 sm:col-span-3 ">
-                <div class="lg:grid-cols-3 rounded-xl shadow-xl">
+                <div class="lg:grid-cols-3 rounded-xl">
 
                     @if (session('success'))
                         <div class="my-4 mx-auto bg-white border-t-4 border-primary-one rounded-b text-sm text-teal-900 px-4 py-3 shadow-md"
@@ -29,7 +33,7 @@
                         @csrf
                         <div class="grid lg:col-span-2">
 
-                            <div class="bg-white rounded-3xl">
+                            <div class="bg-white rounded-3xl shadow-xl">
                                 <div class=" text-center ">
                                     <div class="bg-primary-one py-2  rounded-t-xl ">
                                         <p class="text-3xl text-white uppercase font-semibold text-center">Order Details</p>
@@ -314,7 +318,7 @@
                             </div>
 
 
-                            <div class="bg-white rounded-3xl my-5">
+                            <div class="bg-white rounded-3xl mt-5 pb-5 shadow-xl">
                                 <div class=" text-center ">
                                     <div class="bg-primary-one py-2  rounded-t-xl ">
                                         <p class="text-3xl text-white uppercase font-semibold text-center">Contact
@@ -383,7 +387,7 @@
 
 
                                     <input id="phone" name="Phone" type="tel" name="phone"
-                                        class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 py-2 px-2 w-full border-2 font-light "
+                                        class="border-gray-500 rounded-3xl rounded-bl-none shadow-sm my-3 p-2 w-full border-2 font-light "
                                         placeholder="Phone" value="{{ old('phone') }}"
                                         oninput="this.value=this.value.replace(/[^0-9\+]/g,'');" autocomplete="off"
                                         data-intl-tel-input-id="0">
@@ -405,7 +409,7 @@
                                     </span>
                                 </div>
                                 <div class="flex  justify-center">
-                                    <button type="submit" id="btn-submit" class="rounded-t-xl btn ">Submit</button>
+                                    <button type="submit" id="btn-submit" class="rounded-t-xl btn hover:shadow-xl ">Submit</button>
                                 </div>
                             </div>
 
